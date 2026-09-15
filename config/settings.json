@@ -1,0 +1,21 @@
+{
+  "weights": {
+    "market": 20,
+    "weinstein": 20,
+    "breakout": 20,
+    "quality": 20,
+    "volume_relative_strength": 20
+  },
+  "thresholds": {
+    "strong_buy": 90,
+    "buy": 80,
+    "ready": 70,
+    "watch": 60
+  },
+  "risk": {
+    "max_account_risk_per_trade": 0.01,
+    "atr_period": 20,
+    "atr_stop_multiple": 2.0,
+    "max_position_pct": 0.20
+  }
+}

@@ -1,4 +1,13 @@
-from .indicators import sma, atr, breakout, volume_ratio, high_52w_distance, rs_ratio, stage2_features
+try:
+    # Package context: `python -m app.cli`, or imported as `app.scoring`.
+    from .indicators import sma, atr, breakout, volume_ratio, high_52w_distance, rs_ratio, stage2_features
+except ImportError:
+    # Script context: Streamlit runs `streamlit run app/dashboard.py` directly,
+    # which executes it as a top-level script with no parent package, so a
+    # relative import (`.indicators`) has nothing to be relative to. In that
+    # case the `app/` folder itself is on sys.path, so the bare module name
+    # resolves instead.
+    from indicators import sma, atr, breakout, volume_ratio, high_52w_distance, rs_ratio, stage2_features
 
 MIN_MARKET_BARS = 171  # 150dma + 21 bars of history to check its slope
 

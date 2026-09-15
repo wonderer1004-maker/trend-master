@@ -1,8 +1,13 @@
 import streamlit as st
 import pandas as pd
-from .providers import us_history, kr_history, benchmark_history
-from .scoring import score_symbol
-from .backtest import run_breakout_backtest
+try:
+    from .providers import us_history, kr_history, benchmark_history
+    from .scoring import score_symbol
+    from .backtest import run_breakout_backtest
+except ImportError:
+    from providers import us_history, kr_history, benchmark_history
+    from scoring import score_symbol
+    from backtest import run_breakout_backtest
 
 st.set_page_config(page_title='Trend Master', layout='wide')
 st.title('TREND MASTER — Scanner + Backtest')

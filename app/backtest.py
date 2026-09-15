@@ -1,7 +1,11 @@
 import pandas as pd
 import numpy as np
-from .indicators import atr
-from .scoring import score_symbol
+try:
+    from .indicators import atr
+    from .scoring import score_symbol
+except ImportError:
+    from indicators import atr
+    from scoring import score_symbol
 
 
 def run_breakout_backtest(df, initial_cash=10_000_000, risk_pct=0.01,

@@ -1,0 +1,11 @@
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import {parseCSV,runBacktest} from './dist/engine.mjs';
+const root='./dist/data/';const b=parseCSV(readFileSync(root+'synthetic_bars.csv','utf8')),ix=parseCSV(readFileSync(root+'synthetic_index.csv','utf8')),d=parseCSV(readFileSync(root+'synthetic_daily.csv','utf8'),true);
+const r=runBacktest(b,ix,d,{dataKind:'SYNTHETIC_SOFTWARE_TEST'}),python=JSON.parse(readFileSync('./verification_expected.json','utf8'));
+for(const k of ['final','return_pct','MDD_pct','trades','win_rate_pct','profit_factor','mean_R'])assert.ok(Math.abs(r.summary[k]-python[k])<1e-7,k+' parity failed');
+assert.throws(()=>runBacktest(b.slice(0,-1),ix,d),/76/);
+assert.throws(()=>parseCSV('timestamp,symbol,open,high,low,close,volume\n2026-10-07 09:00:00,S,100,90,99,100,1'),/OHLCV/);
+const c=runBacktest(b,ix,d,{config:{slip:.002}});assert.ok(c.summary.final<r.summary.final);
+const future=b.map(x=>x.day>b[0].day?{...x,close:x.close*1.01,high:x.high*1.02}:x);const f=runBacktest(future,ix,d);assert.deepEqual(f.curve.filter(x=>x.timestamp.slice(0,10)===b[0].day),r.curve.filter(x=>x.timestamp.slice(0,10)===b[0].day));
+console.log(JSON.stringify({status:'passed',checks:['Python numeric parity (7 metrics)','Incomplete session rejection','Invalid OHLC rejection','Cost sensitivity','Future-data prefix invariance'],trades:r.summary.trades}));

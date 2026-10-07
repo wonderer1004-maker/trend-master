@@ -1,0 +1,36 @@
+{
+  "data_kind": "SYNTHETIC_SOFTWARE_TEST",
+  "initial": 1000000,
+  "final": 1032466.7631560896,
+  "return_pct": 3.246676315608954,
+  "MDD_pct": -0.321141654592505,
+  "trades": 19,
+  "win_rate_pct": 78.94736842105263,
+  "profit_factor": 9.46504801041865,
+  "mean_R": 1.3408269297536655,
+  "config": {
+    "capital": 1000000,
+    "risk": 0.003,
+    "neutral_risk": 0.0015,
+    "max_weight": 0.2,
+    "max_positions": 3,
+    "daily_loss": 0.015,
+    "fee": 0.00015,
+    "sell_tax": 0.002,
+    "slip": 0.001,
+    "participation": 0.01,
+    "min_daily_turnover": 5000000000,
+    "volume_ratio": 1.5,
+    "atr_multiple": 1.5,
+    "trail_multiple": 2.5,
+    "entry_start": "09:30",
+    "entry_end": "14:00",
+    "flatten": "15:15",
+    "strict": true
+  },
+  "limitations": [
+    "Bar execution approximation; no orderbook, VI or partial fills",
+    "Fees/tax/slippage are configurable assumptions",
+    "No verified market-data or real-order performance"
+  ]
+}

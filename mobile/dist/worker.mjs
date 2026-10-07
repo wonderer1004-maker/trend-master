@@ -1,0 +1,2 @@
+import {parseCSV,runBacktest} from './engine.mjs';
+self.onmessage=({data})=>{try {let b=parseCSV(data.bars),i=parseCSV(data.index),d=parseCSV(data.daily,true);if(data.from)b=b.filter(r=>r.day>=data.from);if(data.to)b=b.filter(r=>r.day<=data.to);const result=runBacktest(b,i,d,{config:data.config,adaptive:data.adaptive,dataKind:data.kind});self.postMessage({result});}catch(e){self.postMessage({error:e.message});}};

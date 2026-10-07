@@ -1,0 +1,20 @@
+{
+  "capital": 1000000,
+  "risk": 0.003,
+  "neutral_risk": 0.0015,
+  "max_weight": 0.2,
+  "max_positions": 3,
+  "daily_loss": 0.015,
+  "fee": 0.00015,
+  "sell_tax": 0.002,
+  "slip": 0.001,
+  "participation": 0.01,
+  "min_daily_turnover": 5000000000,
+  "volume_ratio": 1.5,
+  "atr_multiple": 1.5,
+  "trail_multiple": 2.5,
+  "entry_start": "09:30",
+  "entry_end": "14:00",
+  "flatten": "15:15",
+  "strict": true
+}

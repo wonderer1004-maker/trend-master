@@ -35,3 +35,23 @@ export function runBacktest(bars,index,daily,options={}){
  if(pos.size)throw Error('청산 데이터가 없어 미결제 포지션이 남았습니다.');let peak=cfg.capital,mdd=0;for(const x of curve){peak=Math.max(peak,x.equity);mdd=Math.min(mdd,x.equity/peak-1);}const final=curve.at(-1).equity,gains=trades.filter(t=>t.pnl>0).reduce((s,t)=>s+t.pnl,0),loss=-trades.filter(t=>t.pnl<0).reduce((s,t)=>s+t.pnl,0);
  return {summary:{data_kind:options.dataKind||'USER_SUPPLIED_NOT_VERIFIED',initial:cfg.capital,final,return_pct:(final/cfg.capital-1)*100,MDD_pct:mdd*100,trades:trades.length,win_rate_pct:trades.length?trades.filter(t=>t.pnl>0).length/trades.length*100:null,profit_factor:loss?gains/loss:null,mean_R:trades.length?mean(trades.map(t=>t.R)):null,config:cfg},trades,curve};
 }
+
+// Snapshot scanner: never represents a live connection or brokerage recommendation.
+export function scanUniverse(bars,index,daily,universe,options={}){
+ const cfg={...defaults,...options.config};if(!bars.length||!daily.length||!index.length)throw Error('분봉·지표·일봉 데이터가 필요합니다.');if(!Array.isArray(universe)||!universe.length)throw Error('코스피 종목 마스터가 필요합니다.');if(new Set(index.map(r=>r.symbol)).size!==1)throw Error('시장지표는 하나만 사용하세요.');
+ const f=features(bars),latest=f.at(-1),stamp=latest.timestamp,day=latest.day,ix=features(index).findLast(r=>r.timestamp===stamp),ctx=contexts(daily,cfg),last=new Map;for(const r of f)last.set(r.symbol,r);let regime=!ix||!ix.ready?'BEAR':ix.close>ix.vwap&&ix.ema20>ix.ema50?'BULL':ix.close<ix.vwap&&ix.ema20<ix.ema50?'BEAR':'NEUTRAL';
+ const unique=new Set;let rows=[];
+ for(const u of universe){if(!/^[0-9A-Z]{6}$/.test(u.symbol)||unique.has(u.symbol))throw Error('종목 마스터 코드 오류 또는 중복');unique.add(u.symbol);const r=last.get(u.symbol),h=ctx.get(u.symbol)?.filter(x=>x.day<day).at(-1);let reasons=[],state='제외',plan=null;
+  if(u.market!=='KOSPI')reasons.push('코스피가 아님');if(u.as_of!==day)reasons.push('해당 거래일 마스터 아님');if(u.eligible!==true)reasons.push('보통주·거래가능 여부 미확인/제외');if(!h)reasons.push('일봉 없음');else if(!h.eligible)reasons.push('전일 추세/거래대금 조건 미충족');
+  if(!reasons.length){state='관찰';if(!r||r.timestamp!==stamp){state='데이터 부족';reasons.push('동시각 분봉 없음');}else{const same=bars.filter(x=>x.symbol===u.symbol&&x.day===day);const n=(Number(r.clock.slice(0,2))*60+Number(r.clock.slice(3))-540)/5+1;if(same.length!==n||same.some((x,i)=>x.ms!==same[0].ms+i*300000)||same[0].clock!=='09:00'){state='데이터 부족';reasons.push('당일 연속 분봉 누락');}else if(!r.ready){state='준비 중';reasons.push('당일 지표 준비기간 부족');}else{
+   if(regime==='BEAR')reasons.push('시장 매수 중단');if(r.clock<cfg.entry_start||r.clock>=cfg.entry_end)reasons.push('신규 진입 시간 밖');if(!r.signal)reasons.push('돌파/VWAP/추세/RSI 조건 대기');if(r.vr<(regime==='NEUTRAL'?2:cfg.volume_ratio))reasons.push('돌파 거래량 부족');if(!options.completeConfirmed)reasons.push('완성봉 여부 미확인');
+   const stop=r.close-cfg.atr_multiple*r.atr,estimated=r.close*(1+cfg.slip),distance=estimated-stop,risk=regime==='BULL'?cfg.risk:cfg.neutral_risk;
+   const qty=Math.floor(Math.min(cfg.capital*risk/(distance+estimated*(2*cfg.fee+cfg.sell_tax+cfg.slip)),cfg.capital*cfg.max_weight/estimated,cfg.capital/(estimated*(1+cfg.fee)),r.volume*cfg.participation));
+   if(distance/estimated<.003||distance/estimated>.02)reasons.push('손절 거리 범위 밖');if(qty<1)reasons.push('투자금/비중 한도로 1주 매수 불가');if(estimated>r.pivot+.75*r.atr)reasons.push('추격 제한 초과');
+   plan={pivot:r.pivot,entry_estimate:estimated,entry_ceiling:r.pivot+.75*r.atr,stop,qty:Math.max(0,qty),planned_risk:Math.max(0,qty)*(distance+estimated*(2*cfg.fee+cfg.sell_tax+cfg.slip)),atr:r.atr,trailing_gap:cfg.trail_multiple*r.atr};state=reasons.length?'관찰':'진입 조건 충족';
+  }}}
+  rows.push({symbol:u.symbol,name:u.name||u.symbol,state,reasons,close:r?.close??null,rsi:r?.rsi??null,vr:r?.vr??null,timestamp:r?.timestamp??null,plan});
+ }
+ const priority={'진입 조건 충족':0,'관찰':1,'준비 중':2,'데이터 부족':3,'제외':4};rows.sort((a,b)=>priority[a.state]-priority[b.state]||(b.vr||0)-(a.vr||0)||a.symbol.localeCompare(b.symbol));
+ return {timestamp:stamp,regime,data_kind:options.dataKind||'USER_SUPPLIED_NOT_VERIFIED',universe_count:universe.length,daily_covered:universe.filter(x=>ctx.has(x.symbol)).length,bar_covered:universe.filter(x=>last.has(x.symbol)).length,eligible_count:rows.filter(x=>x.state!=='제외').length,signals:rows.filter(x=>x.state==='진입 조건 충족').length,rows,limits:'입력 시점의 조건 검토. 실제 전 종목 연결/미체결/보유 현황 확인 없음. 수량은 신규 단일 포지션의 계획값이며 실제 주문 전 재계산 필요.'};
+}

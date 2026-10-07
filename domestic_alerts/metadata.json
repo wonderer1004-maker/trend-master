@@ -1,0 +1,32 @@
+{
+  "069500": {
+    "name": "KODEX 200",
+    "kind": "equity_etf",
+    "group": "KOSPI"
+  },
+  "229200": {
+    "name": "KODEX 코스닥150",
+    "kind": "equity_etf",
+    "group": "KOSDAQ"
+  },
+  "091160": {
+    "name": "KODEX 반도체",
+    "kind": "equity_etf",
+    "group": "SEMICON"
+  },
+  "091170": {
+    "name": "KODEX 은행",
+    "kind": "equity_etf",
+    "group": "BANK"
+  },
+  "091180": {
+    "name": "KODEX 자동차",
+    "kind": "equity_etf",
+    "group": "AUTO"
+  },
+  "117700": {
+    "name": "KODEX 건설",
+    "kind": "equity_etf",
+    "group": "CONSTRUCTION"
+  }
+}

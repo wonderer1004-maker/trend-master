@@ -25,7 +25,7 @@ def build(d,now=None):
    bars.append({'date':str(r.timestamp.date()),'o':float(r.open),'h':float(r.high),'l':float(r.low),'c':float(r.close),'atr':float(r.atr),'regime':strategy.regime(market.loc[r.timestamp])})
   r=g.iloc[-1];z=strategy.make_signal(r,market.loc[end],'etf_rotation',cfg)
   if z:events.append({'symbol':s,'stop':z['stop'],'ceiling':z['ceiling'],'rank':z['rank'],'volume':float(z['volume'])})
-  data[s]={'name':meta[s]['name'],'group':meta[s]['group'],'bars':bars}
+  data[s]={'name':meta[s]['name'],'group':meta[s]['group'],'bars':bars,'metrics':{'close':float(r.close),'ma20':float(r.ma20),'ma60':float(r.ma60),'return20_pct':float(r.r20*100),'turnover20':float(r.turnover20),'atr14':float(r.atr),'volume':float(r.volume),'signal_stop':float(r.close-2*r.atr),'entry_ceiling':float(r.close+.5*r.atr)}}
  return {'schema':1,'source':'Yahoo Finance daily chart / unadjusted OHLC','generated_at':now.isoformat(),'as_of':str(end.date()),'regime':strategy.regime(market.loc[end]),'candidates':sorted(events,key=lambda z:(-z['rank'],z['symbol'])),'instruments':data}
 
 if __name__=='__main__':

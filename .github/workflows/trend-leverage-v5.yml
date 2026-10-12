@@ -6,9 +6,6 @@ on:
       - scripts/trend_leverage_v5.py
       - tests/test_trend_leverage_v5.py
       - scripts/trend_alpha_v4.py
-      - .github/workflows/trend-leverage-v5.yml
-  schedule:
-    - cron: '25 8 * * 1-5'
 permissions:
   contents: write
 concurrency:

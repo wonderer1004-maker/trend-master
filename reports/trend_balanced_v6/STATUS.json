@@ -2,10 +2,10 @@
   "selected_on_development": "CASH100",
   "development_worst_cost_calmar": {
     "CASH100": 0.1600146083553468,
-    "CASH50": 0.14012614417473238,
-    "HYBRID": 0.07036472013532925,
-    "VOL25": 0.029680905232258834,
-    "VOL35": 0.15678368736974874
+    "CASH50": 0.14012636916270016,
+    "HYBRID": 0.07036454402103688,
+    "VOL25": 0.029680671454019952,
+    "VOL35": 0.1567834685477255
   },
   "improves_both_v5_both_costs": false,
   "status": "RESEARCH_ONLY_NO_LIVE_BROKER",

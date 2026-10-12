@@ -22,7 +22,8 @@ def target(data,day,model):
     if core:weights[ETF]=core
     return weights
 
-def simulate(data,start,end,model,multiplier=1):
+def simulate(data,start,end,model,multiplier=1,target_fn=None,daily_target=False,tax_exempt=()):
+    choose=target_fn or target
     days=data[ETF].loc[start:end].index
     if len(days)<2:raise ValueError('short period')
     fee=.0005*multiplier;slip=.001*multiplier;tax=.002*multiplier
@@ -36,7 +37,7 @@ def simulate(data,start,end,model,multiplier=1):
                 qty=max(0,q-quantities.get(s,0))
                 if qty:
                     px=float(data[s].loc[day,'open'])*(1-slip)
-                    cash+=qty*px*(1-fee-(tax if s!=ETF else 0));holdings[s]-=qty
+                    cash+=qty*px*(1-fee-(tax if s!=ETF and s not in tax_exempt else 0));holdings[s]-=qty
                     orders.append(dict(date=str(day.date()),symbol=s,side='SELL',qty=qty,price=px))
                     if holdings[s]==0:del holdings[s]
             for s,w in sorted(pending.items(),key=lambda p:(-p[1],p[0])):
@@ -50,10 +51,11 @@ def simulate(data,start,end,model,multiplier=1):
         curve.append((day,nav));month=(day.year,day.month)
         # Monthly selection, and daily removal of leaders losing the 50-day trend.
         rebalance=month!=last_month
-        if model=='BUY_HOLD':rebalance=(i==0)
-        invalid=any(s!=ETF and data[s].loc[day,'close']<data[s].loc[day,'ma50'] for s in holdings)
-        if rebalance or (model!='BUY_HOLD' and invalid):
-            pending=target(data,day,model);previous_target=pending.copy()
+        if model in ('BUY_HOLD','LEVER_HOLD'):rebalance=(i==0)
+        invalid=(not daily_target) and any(s!=ETF and data[s].loc[day,'close']<data[s].loc[day,'ma50'] for s in holdings)
+        signal_changed=daily_target and choose(data,day,model)!=previous_target
+        if rebalance or signal_changed or (model!='BUY_HOLD' and invalid):
+            pending=choose(data,day,model);previous_target=pending.copy()
         last_month=month
     eq=pd.Series(dict(curve),name='equity');ext=pd.concat([pd.Series([INITIAL],index=[days[0]-pd.Timedelta(days=1)]),eq])
     years=max((days[-1]-days[0]).days/365.25,1/365.25)

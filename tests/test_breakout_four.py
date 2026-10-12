@@ -18,7 +18,7 @@ class SmokeTest(unittest.TestCase):
         idx=pd.bdate_range("2024-01-01",periods=100)
         d=pd.DataFrame({"open":100.0,"high":101.0,"low":99.0,"close":100.0,
             "volume":1_100_000,"foreign":100,"institution":100},index=idx)
-        d.loc[idx[65],["open","high","low","close","volume"]]=[105,112,104,110,6_000_000]
+        d.loc[idx[65],["open","high","low","close","volume"]]=[105,112,104,110,20_000_000]
         d.loc[idx[66]:,["open","high","low","close"]]=[110,112,109,110]
         return d
     def test_signal(self):

@@ -130,6 +130,22 @@ def run():
         m, trades, eq = simulate(data, mode, 10_000_000, 2_000_000, 0.001, 0.001)
         metrics.append(m)
         trades.to_csv(REPORT / f"trades_{mode}.csv", index=False, encoding="utf-8-sig")
+        if not trades.empty:
+            trades = trades.copy()
+            trades["매도일"] = pd.to_datetime(trades["매도일"])
+            trades["연도"] = trades["매도일"].dt.year
+            trades["월"] = trades["매도일"].dt.to_period("M").astype(str)
+            for period, col in (("annual", "연도"), ("monthly", "월")):
+                summary = trades.groupby(col, as_index=False).agg(
+                    거래건수=("손익", "size"), 실현손익_원=("손익", "sum"),
+                    승리건수=("손익", lambda x: int((x > 0).sum())))
+                summary["승률"] = summary["승리건수"] / summary["거래건수"]
+                summary.to_csv(REPORT / f"{period}_{mode}.csv",
+                               index=False, encoding="utf-8-sig")
+        else:
+            for period in ("annual", "monthly"):
+                pd.DataFrame(columns=["기간", "거래건수", "실현손익_원", "승리건수", "승률"]).to_csv(
+                    REPORT / f"{period}_{mode}.csv", index=False, encoding="utf-8-sig")
         eq.rename("equity").to_csv(REPORT / f"equity_{mode}.csv", encoding="utf-8-sig")
         # Equity changes include unrealized P/L and transaction costs.
         for freq, label in (("ME", "monthly"), ("YE", "yearly")):

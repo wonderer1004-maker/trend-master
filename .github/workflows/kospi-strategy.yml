@@ -31,3 +31,5 @@ jobs:
           name: kospi-yahoo-strategy-results
           path: reports/kospi_strategy/
           retention-days: 30
+
+# Re-run requested on 2026-10-12; push triggers KOSPI backtest.

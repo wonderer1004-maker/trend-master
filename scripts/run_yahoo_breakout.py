@@ -126,6 +126,8 @@ def run():
         REPORT / "historical_signals.csv", index=False, encoding="utf-8-sig"
     )
     metrics = []
+    yearly_equity = []
+    monthly_equity = []
     for mode in ("당일", "5일", "20일", "추세"):
         m, trades, eq = simulate(data, mode, 10_000_000, 2_000_000, 0.001, 0.001)
         metrics.append(m)
@@ -147,6 +149,18 @@ def run():
                 pd.DataFrame(columns=["기간", "거래건수", "실현손익_원", "승리건수", "승률"]).to_csv(
                     REPORT / f"{period}_{mode}.csv", index=False, encoding="utf-8-sig")
         eq.rename("equity").to_csv(REPORT / f"equity_{mode}.csv", encoding="utf-8-sig")
+        # Calendar-period account returns include open positions and cash.
+        for frequency, output in (("YE", yearly_equity), ("ME", monthly_equity)):
+            checkpoints = eq.resample(frequency).last()
+            if checkpoints.empty:
+                continue
+            previous = pd.concat([pd.Series([10_000_000.0]), checkpoints.iloc[:-1].reset_index(drop=True)], ignore_index=True)
+            for dt, ending, beginning in zip(checkpoints.index, checkpoints.values, previous.values):
+                output.append({"전략":mode, "기간":dt.strftime("%Y" if frequency=="YE" else "%Y-%m"),
+                               "기초자산_원":round(float(beginning)),
+                               "기말자산_원":round(float(ending)),
+                               "기간손익_원":round(float(ending-beginning)),
+                               "기간수익률":float(ending/beginning-1) if beginning>0 else float("nan")})
         # Equity changes include unrealized P/L and transaction costs.
         for freq, label in (("ME", "monthly"), ("YE", "yearly")):
             period_end = eq.resample(freq).last().dropna()
@@ -172,6 +186,8 @@ def run():
                     승리거래수=("손익",lambda x:int((x>0).sum())),
                 ).to_csv(REPORT/f"{label}_realized_{mode}.csv",index=False,encoding="utf-8-sig")
     pd.DataFrame(metrics).to_csv(REPORT / "comparison.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(yearly_equity).to_csv(REPORT / "annual_account_returns.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(monthly_equity).to_csv(REPORT / "monthly_account_returns.csv", index=False, encoding="utf-8-sig")
     (REPORT / "methodology.json").write_text(json.dumps({
         "provider": "Yahoo Finance via yfinance",
         "start": START, "end": END,

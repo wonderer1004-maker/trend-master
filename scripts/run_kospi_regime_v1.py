@@ -50,7 +50,7 @@ def backtest(data,period_start,period_end,kind):
     days=sorted(set().union(*(set(d.loc[period_start:period_end].index) for d in data.values())))
     cash=float(INITIAL);positions={};trades=[];equity=[]
     for day in days:
-        # Evaluate signals from previous trading session only.
+        # Evaluate signals from previous trading session only.\n        opened_today=set()
         for symbol,d in data.items():
             if symbol in positions or len(positions)>=5 or day not in d.index:continue
             i=d.index.get_loc(day)
@@ -68,9 +68,9 @@ def backtest(data,period_start,period_end,kind):
             cost=qty*buy*(1+COST);cash-=cost
             positions[symbol]={"qty":qty,"buy":buy,"cost":cost,"date":day,
                                "stop":stop,"target":buy+2*risk_per_share,"age":0}
-            # Entry-day OHLC is evaluated, stop-first if stop and target both hit.
+            opened_today.add(symbol)\n            # Entry-day OHLC is evaluated, stop-first if stop and target both hit.
             sell=None;reason=""
-            if row.low<=stop:sell=stop;reason="entry_day_stop"
+            if row.open<=stop:sell=float(row.open);reason="entry_day_gap_stop"\n            elif row.low<=stop:sell=stop;reason="entry_day_stop"
             elif row.high>=buy+2*risk_per_share:sell=buy+2*risk_per_share;reason="entry_day_target"
             if sell is not None:
                 proceeds=qty*sell*(1-SLIP)*(1-COST);cash+=proceeds

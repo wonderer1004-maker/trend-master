@@ -1,0 +1,22 @@
+name: Backtest smoke tests
+on:
+  push:
+    paths:
+      - 'pages/1_신고가_4전략.py'
+      - 'tests/test_breakout_page.py'
+      - '.github/workflows/backtest-smoke.yml'
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile Python sources
+        run: python -m compileall -q app pages tests
+      - name: Install test dependencies
+        run: pip install pandas numpy pytest streamlit
+      - name: Run isolated backtest tests
+        run: pytest -q tests/test_breakout_page.py

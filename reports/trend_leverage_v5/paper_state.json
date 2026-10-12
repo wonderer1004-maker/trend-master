@@ -1,0 +1,15 @@
+{
+  "cash": 111472.78188884258,
+  "holdings": {
+    "069500.KS": 535
+  },
+  "next_target": null,
+  "last_target": {
+    "069500.KS": 1.0
+  },
+  "data_asof": "2026-09-30",
+  "mode": "PAPER_REPLAY",
+  "strategy": "L50",
+  "intent_id": null,
+  "action": "HOLD"
+}

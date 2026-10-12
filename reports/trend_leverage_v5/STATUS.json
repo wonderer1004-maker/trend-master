@@ -1,0 +1,13 @@
+{
+  "selected_on_development": "L50",
+  "outperformed_reused_validation_both_costs": true,
+  "status": "RESEARCH_ONLY_NO_LIVE_BROKER",
+  "attribution": "leverage exposure, NOT demonstrated stock-selection alpha",
+  "limitations": [
+    "repeated reuse of historical validation, overfitting risk",
+    "real leveraged ETF history; daily leverage differs from long-period 2x",
+    "adjusted prices, before account-specific taxes",
+    "ETF risk remains in fallback",
+    "no live orders; no guarantee of future outperformance"
+  ]
+}

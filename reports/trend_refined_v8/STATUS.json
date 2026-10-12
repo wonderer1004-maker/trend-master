@@ -1,0 +1,37 @@
+{
+  "challenger_selected_on_development": "DUAL45",
+  "development_selected_passes_joint_gate": false,
+  "selected_for_historical_joint_goal": "DUAL_BAND45",
+  "selection_uses_reused_validation": true,
+  "development_worst_cost_calmar": {
+    "DUAL45": 0.2513117840976675,
+    "DUAL_BAND45": 0.24175255108078708,
+    "HYST45": 0.030388395707220107,
+    "HYST_BAND45": 0.03239866727577896,
+    "HYST_DUAL45": 0.009605709545312905
+  },
+  "improves_both_v7_all_periods_and_costs": true,
+  "active_paper_strategy": "DUAL_BAND45",
+  "status": "RESEARCH_ONLY_NO_LIVE_BROKER",
+  "input_sha256": {
+    "069500.KS": "c81d8812b5a26289c096c01656a801b1320b21ce3950ae2e2d170652301f76d1",
+    "122630.KS": "56c5f898289eca470d93c91a00f9c996f542e8f94d893711383dcb265be7b9d4",
+    "005930.KS": "2e5d4b38152c3c6c6238d8388989d70dea6f7fabdf97dfbc849381f517547cd7",
+    "000660.KS": "2ce402720afe17fe278af60a038cd0a10152cc774afe772d0347656f4083b9c3",
+    "005380.KS": "8c19850772291a62007a163cd078d9a9a2c1e49c8494c10b9516e292842fe42e",
+    "035420.KS": "ae2eed61795699769b889127e980d8d183de843540f3b346a024e18a8b1e22e1",
+    "005490.KS": "468fa567408224ff0f487edd02267381da96e7c6aa64997c6b34348cf5d97c8f",
+    "051910.KS": "cf56e6c0f999c44f193f6f00a1cbeed6ff112c92b897fd8a452aaf0bded16919",
+    "068270.KS": "3cbcccd752f11b942e4d8f68b6aea271fd029960f42db891aa61e0a61a11c4da",
+    "006400.KS": "47f78d4ba0d3785ab091d656e12eff05a389c54d6b18fe70a1bcf12c527a29d7",
+    "012330.KS": "34ea0e375620013802ec52d2ea6f86a845c991c1ee11963239d3825df5070df9",
+    "055550.KS": "9977e17bf2ce1ac3a1a0ed8464d74d358b4d197cb35f94d89d1647303ec1c151"
+  },
+  "limitations": [
+    "same frozen V7 history, not unseen validation",
+    "many prior trials; overfitting risk",
+    "leveraged ETF and 10 surviving stocks",
+    "close risk controls -> next open; no loss ceiling",
+    "before account-specific taxes, no broker connection"
+  ]
+}

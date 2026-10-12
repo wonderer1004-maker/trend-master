@@ -1,0 +1,11 @@
+{
+  "cash": 56528657.67643708,
+  "holdings": {},
+  "next_target": null,
+  "data_asof": "2026-10-12",
+  "mode": "PAPER_REPLAY",
+  "pause_remaining": 0,
+  "strategy": "DUAL_BAND45",
+  "intent_id": null,
+  "action": "HOLD"
+}

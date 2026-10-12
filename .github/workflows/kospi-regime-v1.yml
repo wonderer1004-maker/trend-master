@@ -33,3 +33,5 @@ jobs:
           retention-days: 30
 
 # Final R1-R3 backtest rerun requested 2026-10-12.
+
+# Requested new Yahoo KOSPI R1-R3 backtest on 2026-10-12.

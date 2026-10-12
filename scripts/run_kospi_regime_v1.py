@@ -7,7 +7,7 @@ from pathlib import Path
 import json
 import numpy as np
 import pandas as pd
-from run_kospi_strategy import download,features,SYMBOLS,END,INITIAL
+from run_kospi_strategy import download,features,SYMBOLS,END,INITIAL,COST,SLIP
 
 OUT=Path(__file__).resolve().parents[1]/"reports"/"kospi_regime_v1"
 OUT.mkdir(parents=True,exist_ok=True)

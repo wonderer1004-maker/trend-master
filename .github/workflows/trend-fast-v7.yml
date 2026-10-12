@@ -1,0 +1,46 @@
+name: Trend Fast V7 risk return comparison
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/trend_fast_v7.py
+      - tests/test_trend_fast_v7.py
+      - .github/workflows/trend-fast-v7.yml
+  schedule:
+    - cron: '25 8 * * 1-5'
+permissions:
+  contents: write
+concurrency:
+  group: trend-fast-v7
+  cancel-in-progress: false
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas==2.2.3 numpy==2.2.6 yfinance==0.2.65
+      - name: Execution and duplicate intent tests
+        run: python -m unittest discover -s tests -p 'test_trend_*v*.py' -v
+      - name: Historical comparisons and cost stress
+        run: python -u scripts/trend_fast_v7.py
+      - name: Latest close screen and paper intents
+        run: python -u scripts/trend_fast_v7.py --end "$(date -u -d tomorrow +%Y-%m-%d)" --output reports/trend_fast_v7_latest
+      - name: Publish results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f reports/trend_fast_v7 reports/trend_fast_v7_latest
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish V7 fast validation and paper automation'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trend-fast-v7-results
+          path: reports/trend_fast_v7*/

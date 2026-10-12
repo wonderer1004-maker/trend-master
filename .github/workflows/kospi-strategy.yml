@@ -1,0 +1,33 @@
+name: KOSPI-only Yahoo strategy validation
+on:
+  push:
+    paths:
+      - 'scripts/run_kospi_strategy.py'
+      - '.github/workflows/kospi-strategy.yml'
+  workflow_dispatch:
+jobs:
+  kospi-backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pandas numpy 'yfinance>=0.2.65'
+      - name: Run KOSPI-only historical and holdout validation
+        shell: bash
+        run: |
+          mkdir -p reports/kospi_strategy
+          set -o pipefail
+          python -u scripts/run_kospi_strategy.py 2>&1 | tee reports/kospi_strategy/execution.log
+      - name: Upload backtest outputs even on error
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kospi-yahoo-strategy-results
+          path: reports/kospi_strategy/
+          retention-days: 30

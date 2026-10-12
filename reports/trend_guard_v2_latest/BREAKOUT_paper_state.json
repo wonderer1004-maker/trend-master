@@ -1,0 +1,248 @@
+{
+  "mode": "PAPER_REPLAY",
+  "asof": "2026-10-08",
+  "cash": 12169116.988678684,
+  "positions": {},
+  "events": [
+    {
+      "date": "2023-05-22",
+      "symbol": "005930.KS",
+      "side": "BUY",
+      "quantity": 21,
+      "reason": "previous_close_signal",
+      "price": 64429.42425171076
+    },
+    {
+      "date": "2023-07-07",
+      "symbol": "005930.KS",
+      "side": "SELL",
+      "quantity": 21,
+      "reason": "stop",
+      "price": 66926.13774714606
+    },
+    {
+      "date": "2023-07-17",
+      "symbol": "012330.KS",
+      "side": "BUY",
+      "quantity": 4,
+      "reason": "previous_close_signal",
+      "price": 235290.4399384905
+    },
+    {
+      "date": "2023-07-17",
+      "symbol": "005490.KS",
+      "side": "BUY",
+      "quantity": 2,
+      "reason": "previous_close_signal",
+      "price": 417074.8775250065
+    },
+    {
+      "date": "2023-07-26",
+      "symbol": "012330.KS",
+      "side": "SELL",
+      "quantity": 4,
+      "reason": "stop",
+      "price": 224218.9990400521
+    },
+    {
+      "date": "2023-07-27",
+      "symbol": "005490.KS",
+      "side": "SELL",
+      "quantity": 2,
+      "reason": "gap_stop",
+      "price": 564445.2271675084
+    },
+    {
+      "date": "2023-07-28",
+      "symbol": "000660.KS",
+      "side": "BUY",
+      "quantity": 7,
+      "reason": "previous_close_signal",
+      "price": 123587.5028816162
+    },
+    {
+      "date": "2023-08-02",
+      "symbol": "000660.KS",
+      "side": "SELL",
+      "quantity": 7,
+      "reason": "stop",
+      "price": 116347.93571061385
+    },
+    {
+      "date": "2024-02-14",
+      "symbol": "000660.KS",
+      "side": "BUY",
+      "quantity": 6,
+      "reason": "previous_close_signal",
+      "price": 143946.22738923796
+    },
+    {
+      "date": "2024-03-20",
+      "symbol": "000660.KS",
+      "side": "SELL",
+      "quantity": 6,
+      "reason": "stop",
+      "price": 155106.08140114092
+    },
+    {
+      "date": "2024-03-27",
+      "symbol": "000660.KS",
+      "side": "BUY",
+      "quantity": 4,
+      "reason": "previous_close_signal",
+      "price": 173857.11542184913
+    },
+    {
+      "date": "2024-04-03",
+      "symbol": "005930.KS",
+      "side": "BUY",
+      "quantity": 15,
+      "reason": "previous_close_signal",
+      "price": 80966.10403384178
+    },
+    {
+      "date": "2024-04-16",
+      "symbol": "005930.KS",
+      "side": "SELL",
+      "quantity": 15,
+      "reason": "stop",
+      "price": 77565.66334101747
+    },
+    {
+      "date": "2024-04-19",
+      "symbol": "000660.KS",
+      "side": "SELL",
+      "quantity": 4,
+      "reason": "stop",
+      "price": 170384.82706674666
+    },
+    {
+      "date": "2024-05-08",
+      "symbol": "068270.KS",
+      "side": "BUY",
+      "quantity": 6,
+      "reason": "previous_close_signal",
+      "price": 169211.21067300672
+    },
+    {
+      "date": "2024-05-20",
+      "symbol": "068270.KS",
+      "side": "SELL",
+      "quantity": 6,
+      "reason": "stop",
+      "price": 160300.6017514983
+    },
+    {
+      "date": "2024-05-23",
+      "symbol": "005380.KS",
+      "side": "BUY",
+      "quantity": 4,
+      "reason": "previous_close_signal",
+      "price": 249380.05426588393
+    },
+    {
+      "date": "2024-05-29",
+      "symbol": "005380.KS",
+      "side": "SELL",
+      "quantity": 4,
+      "reason": "stop",
+      "price": 235716.57075587258
+    },
+    {
+      "date": "2024-06-14",
+      "symbol": "000660.KS",
+      "side": "BUY",
+      "quantity": 3,
+      "reason": "previous_close_signal",
+      "price": 221747.16548713236
+    },
+    {
+      "date": "2024-06-25",
+      "symbol": "000660.KS",
+      "side": "SELL",
+      "quantity": 3,
+      "reason": "gap_stop",
+      "price": 212172.3357986111
+    },
+    {
+      "date": "2024-07-04",
+      "symbol": "055550.KS",
+      "side": "BUY",
+      "quantity": 22,
+      "reason": "previous_close_signal",
+      "price": 47615.135588854166
+    },
+    {
+      "date": "2024-08-02",
+      "symbol": "055550.KS",
+      "side": "SELL",
+      "quantity": 22,
+      "reason": "stop",
+      "price": 53877.545874327814
+    },
+    {
+      "date": "2025-07-29",
+      "symbol": "005930.KS",
+      "side": "BUY",
+      "quantity": 16,
+      "reason": "previous_close_signal",
+      "price": 69992.4594526381
+    },
+    {
+      "date": "2025-08-27",
+      "symbol": "005930.KS",
+      "side": "SELL",
+      "quantity": 16,
+      "reason": "stop",
+      "price": 69146.56211374221
+    },
+    {
+      "date": "2025-09-01",
+      "symbol": "012330.KS",
+      "side": "BUY",
+      "quantity": 3,
+      "reason": "previous_close_signal",
+      "price": 315660.5084603421
+    },
+    {
+      "date": "2025-09-15",
+      "symbol": "005930.KS",
+      "side": "BUY",
+      "quantity": 18,
+      "reason": "previous_close_signal",
+      "price": 76319.46622136436
+    },
+    {
+      "date": "2025-09-16",
+      "symbol": "012330.KS",
+      "side": "SELL",
+      "quantity": 3,
+      "reason": "stop",
+      "price": 300104.4256270419
+    },
+    {
+      "date": "2025-11-05",
+      "symbol": "005930.KS",
+      "side": "SELL",
+      "quantity": 18,
+      "reason": "gap_stop",
+      "price": 100193.28948185884
+    },
+    {
+      "date": "2025-12-29",
+      "symbol": "005930.KS",
+      "side": "BUY",
+      "quantity": 9,
+      "reason": "previous_close_signal",
+      "price": 119141.13547633366
+    },
+    {
+      "date": "2026-03-03",
+      "symbol": "005930.KS",
+      "side": "SELL",
+      "quantity": 9,
+      "reason": "stop",
+      "price": 197173.98024743117
+    }
+  ]
+}

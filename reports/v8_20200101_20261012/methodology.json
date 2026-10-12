@@ -1,0 +1,39 @@
+{
+  "requested_start": "2020-01-01",
+  "requested_end": "2026-10-12",
+  "first_valuation_date": "2020-01-02",
+  "actual_last_date": "2026-10-12",
+  "covers_requested_end": true,
+  "initial_cash": 10000000,
+  "fixed_strategy": "DUAL_BAND45",
+  "optimization": false,
+  "execution": "close decision, next trading day open",
+  "final_valuation": "mark open holdings to last close; no fictional terminal liquidation",
+  "input_sha256": {
+    "069500.KS": "1ef5bf3e59245bdccad1b42ec9e495824647e94ac16f44617e89d35161c9b7a6",
+    "122630.KS": "9361c37a9e8693251343ce3f65e36801f330b7eed068fc91012df030ef96a998",
+    "005930.KS": "dc7ddce0280085b9bd0aa85e5a5173ad9d27d860673a74477e16193f223c9d54",
+    "000660.KS": "cea17716dbdbebb8d5ea1b7d173b161cf084eee8a0ee33a9aecf2587488097eb",
+    "005380.KS": "5534ea81ed3b0605ca87b3a0603f22a425e2147085724d5694b8e0fa44030268",
+    "035420.KS": "7c4df341cc7a132d5d2a3d73b68b198d81fa596a56fc4a1087dd5ada0b22ae31",
+    "005490.KS": "8d61ad074f4c3afcd100c7dc9dd33728300552b98fc31a65884eec7415a9c0a7",
+    "051910.KS": "0cfac8e4f0e7dcb7b59f25d89adb641c4016dd3817787906d88f0c88c6a04114",
+    "068270.KS": "3c7ac1d862eb5bf497e609a0cfab40eb99d0f12a6185258a879f0a6cda02733d",
+    "006400.KS": "e435fd439e7b27da4b30d40c0f24576ed9448ab69941938aa190cde5ca9d410f",
+    "012330.KS": "4d74b57466dd96ceee19b254bc708a3bf1894302d59d4bd34e29575b9b9bec1e",
+    "055550.KS": "7eed81d5975ef00987de1c46273e67df127748b79a40e54cb7f021655fa0722d"
+  },
+  "costs": {
+    "fee_each_side": 0.0005,
+    "slippage_each_side": 0.001,
+    "stock_sell_tax_assumption": 0.002,
+    "etf_sell_tax_assumption": 0
+  },
+  "limitations": [
+    "account-specific taxes excluded",
+    "Yahoo adjusted prices",
+    "surviving 10 stocks and leverage",
+    "period previously used in strategy selection, not unseen validation",
+    "no live orders"
+  ]
+}

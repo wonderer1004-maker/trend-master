@@ -1,0 +1,54 @@
+{
+  "DUAL_BAND45_1x": {
+    "cash": 56528656.41292536,
+    "holdings": {},
+    "next_target": null,
+    "data_asof": "2026-10-12",
+    "mode": "PAPER_REPLAY",
+    "pause_remaining": 0
+  },
+  "DUAL_BAND45_2x": {
+    "cash": 38212343.85283695,
+    "holdings": {},
+    "next_target": null,
+    "data_asof": "2026-10-12",
+    "mode": "PAPER_REPLAY",
+    "pause_remaining": 0
+  },
+  "MIX45_1x": {
+    "cash": 55890250.56804376,
+    "holdings": {},
+    "next_target": null,
+    "data_asof": "2026-10-12",
+    "mode": "PAPER_REPLAY",
+    "pause_remaining": 0
+  },
+  "MIX45_2x": {
+    "cash": 38078556.838448815,
+    "holdings": {},
+    "next_target": null,
+    "data_asof": "2026-10-12",
+    "mode": "PAPER_REPLAY",
+    "pause_remaining": 0
+  },
+  "BUY_HOLD_1x": {
+    "cash": 16096.911633819342,
+    "holdings": {
+      "069500.KS": 384
+    },
+    "next_target": null,
+    "data_asof": "2026-10-12",
+    "mode": "PAPER_REPLAY",
+    "pause_remaining": 0
+  },
+  "BUY_HOLD_2x": {
+    "cash": 1128.5411864947528,
+    "holdings": {
+      "069500.KS": 384
+    },
+    "next_target": null,
+    "data_asof": "2026-10-12",
+    "mode": "PAPER_REPLAY",
+    "pause_remaining": 0
+  }
+}

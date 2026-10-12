@@ -1,0 +1,11 @@
+{
+  "cash": 55890251.30851977,
+  "holdings": {},
+  "next_target": null,
+  "data_asof": "2026-10-12",
+  "mode": "PAPER_REPLAY",
+  "pause_remaining": 0,
+  "strategy": "MIX45",
+  "intent_id": null,
+  "action": "HOLD"
+}

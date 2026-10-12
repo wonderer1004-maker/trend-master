@@ -1,0 +1,18 @@
+{
+  "selected_on_development": "MIX45",
+  "development_worst_cost_calmar": {
+    "FAST100": 0.17887236661867886,
+    "FAST45": 0.17370122743534624,
+    "MIX45": 0.23582693326351617
+  },
+  "improves_both_v5_both_costs": false,
+  "status": "RESEARCH_ONLY_NO_LIVE_BROKER",
+  "limitations": [
+    "repeated validation reuse and adaptive strategy changes; high overfitting risk",
+    "no independent unseen validation",
+    "leverage and surviving stock selection",
+    "adjusted prices and account taxes excluded",
+    "next-open risk controls can exceed thresholds",
+    "no live broker connection"
+  ]
+}

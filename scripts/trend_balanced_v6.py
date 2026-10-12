@@ -39,7 +39,9 @@ def target(data,day,model,blocked=()):
         weights={s:float(w*scale) for s,w in weights.items()}
     return weights
 
-def simulate(data,start,end,model,multiplier=1):
+def simulate(data,start,end,model,multiplier=1,target_fn=None,strong_fn=None,weekly=None):
+    choose=target_fn or target
+    condition=strong_fn or strong
     days=data[ETF].loc[start:end].index
     if len(days)<2:raise ValueError('short evaluation window')
     fee=.0005*multiplier;slip=.001*multiplier;tax=.002*multiplier
@@ -67,7 +69,7 @@ def simulate(data,start,end,model,multiplier=1):
         nav=cash+sum(q*float(data[s].loc[day,'close']) for s,q in holdings.items())
         curve.append((day,nav));exposures.append(1-cash/nav);peak=max(peak,nav)
         for s in holdings:highs[s]=max(highs.get(s,0),float(data[s].loc[day,'close']))
-        state=strong(data,day);month=(day.year,day.month)
+        state=condition(data,day);month=(day.year,day.month)
         exits=[]
         if controls:
             for s in holdings:
@@ -77,12 +79,12 @@ def simulate(data,start,end,model,multiplier=1):
             if nav<=peak*.75 and i>=pause_until:
                 pause_until=i+10;pending={}
         # Hybrid/vol sizing update weekly; fixed ETF mixes update monthly or regime changes.
-        periodic=(day.weekday()==4) if model in ('HYBRID','VOL25','VOL35') else month!=last_month
+        periodic=(day.weekday()==4) if (weekly is True or (weekly is None and model in ('HYBRID','VOL25','VOL35'))) else month!=last_month
         if model in ('BUY_HOLD','LEVER_HOLD'):periodic=(i==0)
         changed=(state!=last_strong) if model not in ('BUY_HOLD','LEVER_HOLD') else False
         if periodic or changed or exits or (controls and i==pause_until):
             blocked=[s for s,j in cooldown.items() if i<j]
-            pending=target(data,day,model,blocked)
+            pending=choose(data,day,model,blocked)
         if controls and i<pause_until:pending={}
         last_strong=state;last_month=month
     eq=pd.Series(dict(curve),name='equity');ext=pd.concat([pd.Series([INITIAL],index=[days[0]-pd.Timedelta(days=1)]),eq])

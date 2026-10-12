@@ -56,6 +56,8 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--end',default='2026-10-01');ap.add_argument('--output',default='reports/trend_refined_v8')
     ap.add_argument('--data-dir');ap.add_argument('--paper-model',choices=[*MODELS,'MIX45']);a=ap.parse_args();out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
     raw={s:pd.read_csv(Path(a.data_dir)/(s+'.csv'),index_col=0,parse_dates=True) if a.data_dir else download(s,a.end) for s in [ETF,LEVER,*SYMBOLS]}
+    snapshots=out/'input';snapshots.mkdir(exist_ok=True)
+    for symbol,frame in raw.items():frame.to_csv(snapshots/(symbol+'.csv'))
     data=enrich(raw);rows=[]
     for model in [*MODELS,'MIX45','BUY_HOLD']:
         for period,start,end in [('development','2020-01-01','2023-12-31'),('reused_validation','2024-01-01','2026-09-30')]:
@@ -73,9 +75,9 @@ def main():
     active=a.paper_model or joint_selected or 'MIX45'
     passed=bool(table[table.strategy==active].improves_both_v7.all())
     table.to_csv(out/'comparison.csv',index=False)
-    _,_,orders,state=simulate(data,'2020-01-01',str(data[ETF].index[-1].date()),active)
+    paper_metrics,_,orders,state=simulate(data,'2020-01-01',str(data[ETF].index[-1].date()),active)
     decision=state['next_target'];asof=state['data_asof'];intent=record_intent(out/'paper_intents.sqlite',asof,active,decision) if decision is not None else None
-    state.update(strategy=active,intent_id=intent,action='REBALANCE_NEXT_OPEN' if decision is not None else 'HOLD')
+    state.update(strategy=active,intent_id=intent,metrics=paper_metrics,action='REBALANCE_NEXT_OPEN' if decision is not None else 'HOLD')
     (out/'paper_state.json').write_text(json.dumps(state,indent=2));orders.tail(100).to_csv(out/'paper_orders.csv',index=False)
     status=dict(challenger_selected_on_development=selected,development_selected_passes_joint_gate=dev_selected_passes,
         selected_for_historical_joint_goal=joint_selected,selection_uses_reused_validation=True,development_worst_cost_calmar=scores,

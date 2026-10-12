@@ -1,4 +1,18 @@
-  File "/home/runner/work/trend-master/trend-master/scripts/run_kospi_regime_v1.py", line 71
-    opened_today.add(symbol)\n            # Entry-day OHLC is evaluated, stop-first if stop and target both hit.
-                             ^
-SyntaxError: unexpected character after line continuation character
+downloaded ^KS11
+downloaded 005930.KS
+downloaded 000660.KS
+downloaded 005380.KS
+downloaded 035420.KS
+downloaded 005490.KS
+downloaded 051910.KS
+downloaded 068270.KS
+downloaded 006400.KS
+downloaded 012330.KS
+downloaded 055550.KS
+          전략        기간  거래수    누적손익      총수익률      CAGR       MDD       승률      구간  매수신호수
+R1_강세돌파_보합현금 2020-2023   26  520534  0.052053  0.012811 -0.042877 0.423077   train     33
+R1_강세돌파_보합현금 2024-2026   19 1175149  0.117515  0.041332 -0.021157 0.578947 holdout     23
+R2_강세눌림_보합반등 2020-2023  121 -130978 -0.013098 -0.003302 -0.087402 0.223140   train    123
+R2_강세눌림_보합반등 2024-2026  144  590338  0.059034  0.021128 -0.099944 0.277778 holdout    153
+R3_강세혼합_보합반등 2020-2023  137  214428  0.021443  0.005336 -0.080520 0.240876   train    154
+R3_강세혼합_보합반등 2024-2026  156 1413617  0.141362  0.049378 -0.106233 0.301282 holdout    176

@@ -1,0 +1,23 @@
+{
+  "status": "candidate strategy, not verified profitable",
+  "regime": "bull above 200MA by 2%, 20MA>60MA, 60-day return>3%; bear below 200MA by 2%, 20MA<60MA, 60-day return<-3%; otherwise sideways",
+  "strategies": [
+    "R1_강세돌파_보합현금",
+    "R2_강세눌림_보합반등",
+    "R3_강세혼합_보합반등"
+  ],
+  "bear_policy": "no new buys; existing positions follow original stop/trend exits",
+  "universe": "10 KOSPI survivors, not full KOSPI; survivorship bias",
+  "trade_execution": "next session open; new purchases funded only by start-of-day cash; stop-first daily OHLC approximation",
+  "fees": "0.1% fee plus 0.1% slippage each side",
+  "split": "2020-2023 train; 2024-2026-09 holdout",
+  "limitations": [
+    "not market-wide",
+    "no leverage or shorting",
+    "no regime-change forced liquidation",
+    "range strategy shares trend exit and 2R take profit from original simulator",
+    "backtest not independently verified",
+    "corporate actions and delistings may bias results"
+  ],
+  "download_errors": {}
+}

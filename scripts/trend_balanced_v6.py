@@ -39,7 +39,7 @@ def target(data,day,model,blocked=()):
         weights={s:float(w*scale) for s,w in weights.items()}
     return weights
 
-def simulate(data,start,end,model,multiplier=1,target_fn=None,strong_fn=None,weekly=None):
+def simulate(data,start,end,model,multiplier=1,target_fn=None,strong_fn=None,weekly=None,min_rebalance_delta=0.):
     choose=target_fn or target
     condition=strong_fn or strong
     days=data[ETF].loc[start:end].index
@@ -85,6 +85,10 @@ def simulate(data,start,end,model,multiplier=1,target_fn=None,strong_fn=None,wee
         if periodic or changed or exits or (controls and i==pause_until):
             blocked=[s for s,j in cooldown.items() if i<j]
             pending=choose(data,day,model,blocked)
+        if pending is not None and min_rebalance_delta>0 and not changed and not exits and i!=pause_until and pending:
+            current={s:q*float(data[s].loc[day,'close'])/nav for s,q in holdings.items()}
+            drift=max(abs(pending.get(s,0)-current.get(s,0)) for s in set(pending)|set(current))
+            if drift<min_rebalance_delta:pending=None
         if controls and i<pause_until:pending={}
         last_strong=state;last_month=month
     eq=pd.Series(dict(curve),name='equity');ext=pd.concat([pd.Series([INITIAL],index=[days[0]-pd.Timedelta(days=1)]),eq])

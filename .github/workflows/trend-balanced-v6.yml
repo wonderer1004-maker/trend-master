@@ -5,9 +5,6 @@ on:
     paths:
       - scripts/trend_balanced_v6.py
       - tests/test_trend_balanced_v6.py
-      - .github/workflows/trend-balanced-v6.yml
-  schedule:
-    - cron: '25 8 * * 1-5'
 permissions:
   contents: write
 concurrency:

@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install packages
-        run: pip install pandas numpy yfinance
+        run: pip install pandas numpy 'yfinance>=0.2.65'
       - name: Screen and backtest Yahoo history
         shell: bash
         run: |

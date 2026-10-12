@@ -131,6 +131,30 @@ def run():
         metrics.append(m)
         trades.to_csv(REPORT / f"trades_{mode}.csv", index=False, encoding="utf-8-sig")
         eq.rename("equity").to_csv(REPORT / f"equity_{mode}.csv", encoding="utf-8-sig")
+        # Equity changes include unrealized P/L and transaction costs.
+        for freq, label in (("ME", "monthly"), ("YE", "yearly")):
+            period_end = eq.resample(freq).last().dropna()
+            previous = period_end.shift(1)
+            if not previous.empty:
+                previous.iloc[0] = 10_000_000
+            period = pd.DataFrame({
+                "기간": period_end.index.strftime("%Y-%m" if label=="monthly" else "%Y"),
+                "기간초자산": previous.values,
+                "기간말자산": period_end.values,
+                "기간손익": (period_end-previous).values,
+                "기간수익률": (period_end/previous-1).values,
+            })
+            period.to_csv(REPORT / f"{label}_pnl_{mode}.csv",index=False,encoding="utf-8-sig")
+        if not trades.empty:
+            realized = trades.copy()
+            realized["매도월"] = pd.to_datetime(realized["매도일"]).dt.strftime("%Y-%m")
+            realized["매도연도"] = pd.to_datetime(realized["매도일"]).dt.strftime("%Y")
+            for group, label in (("매도월","monthly"),("매도연도","yearly")):
+                realized.groupby(group,as_index=False).agg(
+                    청산거래수=("손익","size"),
+                    실현손익=("손익","sum"),
+                    승리거래수=("손익",lambda x:int((x>0).sum())),
+                ).to_csv(REPORT/f"{label}_realized_{mode}.csv",index=False,encoding="utf-8-sig")
     pd.DataFrame(metrics).to_csv(REPORT / "comparison.csv", index=False, encoding="utf-8-sig")
     (REPORT / "methodology.json").write_text(json.dumps({
         "provider": "Yahoo Finance via yfinance",

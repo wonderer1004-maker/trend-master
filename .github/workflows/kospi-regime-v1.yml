@@ -1,0 +1,33 @@
+name: KOSPI regime-aware Yahoo backtest
+on:
+  push:
+    paths:
+      - 'scripts/run_kospi_regime_v1.py'
+      - '.github/workflows/kospi-regime-v1.yml'
+  workflow_dispatch:
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: pip install pandas numpy 'yfinance>=0.2.65'
+      - name: Execute and capture logs
+        shell: bash
+        run: |
+          mkdir -p reports/kospi_regime_v1
+          set -o pipefail
+          python -u scripts/run_kospi_regime_v1.py 2>&1 | tee reports/kospi_regime_v1/execution.log
+      - name: Upload results or failure log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kospi-regime-v1-results
+          path: reports/kospi_regime_v1/
+          retention-days: 30

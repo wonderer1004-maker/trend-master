@@ -39,3 +39,7 @@ pip install pandas==2.2.3 numpy==2.2.6 yfinance==0.2.65
 python -m unittest discover -s tests -p 'test_trend_*v*.py' -v
 python scripts/trend_alpha_v4.py
 ```
+
+
+## 实測 결과 2026-10-12
+V4 run38248790944성공. 선택 CORE30의2024~2026.09수익109.25%, MDD-40.85%; 일반ETF220.01%, MDD-40.79%. 시장 초과수익 검증 실패. LEADER1은129.67%, LEADER2는68.71%로 역시 실패했습니다. 이 버전을 성공한 조건검색식으로 설명하거나 실전 승격하지 않습니다.

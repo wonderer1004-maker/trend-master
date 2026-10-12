@@ -27,6 +27,32 @@ jobs:
           mkdir -p reports/yahoo_breakout
           set -o pipefail
           python -u scripts/run_yahoo_breakout.py 2>&1 | tee reports/yahoo_breakout/execution.log
+      - name: Summarize simulated results
+        if: always()
+        shell: bash
+        run: |
+          echo "## Yahoo 신고가 4전략 백테스트" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f reports/yahoo_breakout/comparison.csv ]; then
+            python - <<'PY'
+          import pandas as pd
+          import os
+          d = pd.read_csv("reports/yahoo_breakout/comparison.csv")
+          columns = [c for c in ["전략","거래수","누적손익","총수익률","CAGR","MDD","승률"] if c in d.columns]
+          for col in ["총수익률","CAGR","MDD","승률"]:
+              if col in d: d[col] = d[col].map(lambda x: f"{x*100:.2f}%")
+          for col in ["누적손익"]:
+              if col in d: d[col] = d[col].map(lambda x: f"{x:,.0f}원")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f:
+              f.write("| " + " | ".join(columns) + " |\\n")
+              f.write("| " + " | ".join(["---"]*len(columns)) + " |\\n")
+              for _, row in d[columns].iterrows():
+                  f.write("| " + " | ".join(map(str, row.values)) + " |\\n")
+              f.write("\\n실현손익은 모의거래이며 외국인·기관 수급조건은 미적용입니다.\\n")
+          PY
+          else
+            echo "백테스트 미완료: execution.log 오류를 확인하세요." >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Upload screening and backtest results
         if: always()
         uses: actions/upload-artifact@v4

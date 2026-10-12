@@ -1,0 +1,4 @@
+  File "/home/runner/work/trend-master/trend-master/scripts/run_kospi_regime_v1.py", line 71
+    opened_today.add(symbol)\n            # Entry-day OHLC is evaluated, stop-first if stop and target both hit.
+                             ^
+SyntaxError: unexpected character after line continuation character

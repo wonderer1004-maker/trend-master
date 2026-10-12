@@ -61,7 +61,7 @@ def simulate(data,mode,capital,allocation,fee,slip):
                 net=p["qty"]*sell*(1-slip)*(1-fee)
                 cash+=net
                 pnl=net-p["cost"]
-                trades.append({"전략":mode,"종목":code,"매수일":p["date"].date(),"매도일":day.date(),"손익":round(pnl),"수익률":pnl/p["cost"],"사유":reason})
+                trades.append({"전략":mode,"종목":code,"매수일":p["date"].date(),"매도일":day.date(),"매수단가":p["entry"],"매도단가":sell,"수량":p["qty"],"매수금액":p["cost"],"매도정산금액":net,"손익":round(pnl),"수익률":pnl/p["cost"],"사유":reason})
                 del positions[code]
             else:p["age"]+=1
         # 전일 확정 신호만 사용하고 오늘 시가에 진입
@@ -83,7 +83,7 @@ def simulate(data,mode,capital,allocation,fee,slip):
                 px=float(d.loc[day,"close"])
                 net=p["qty"]*px*(1-slip)*(1-fee);cash+=net
                 pnl=net-p["cost"]
-                trades.append({"전략":mode,"종목":code,"매수일":day.date(),"매도일":day.date(),"손익":round(pnl),"수익률":pnl/p["cost"],"사유":"당일 종가"})
+                trades.append({"전략":mode,"종목":code,"매수일":day.date(),"매도일":day.date(),"매수단가":p["entry"],"매도단가":px,"수량":p["qty"],"매수금액":p["cost"],"매도정산금액":net,"손익":round(pnl),"수익률":pnl/p["cost"],"사유":"당일 종가"})
                 del positions[code]
         value=cash
         for code,p in positions.items():
@@ -96,7 +96,7 @@ def simulate(data,mode,capital,allocation,fee,slip):
             hist=data[code].loc[:dates[-1]]
             px=float(hist.close.iloc[-1]);net=p["qty"]*px*(1-slip)*(1-fee)
             pnl=net-p["cost"];cash+=net
-            trades.append({"전략":mode,"종목":code,"매수일":p["date"].date(),"매도일":dates[-1].date(),"손익":round(pnl),"수익률":pnl/p["cost"],"사유":"테스트 종료"})
+            trades.append({"전략":mode,"종목":code,"매수일":p["date"].date(),"매도일":dates[-1].date(),"매수단가":p["entry"],"매도단가":px,"수량":p["qty"],"매수금액":p["cost"],"매도정산금액":net,"손익":round(pnl),"수익률":pnl/p["cost"],"사유":"테스트 종료"})
         if curve:curve[-1]=(dates[-1],cash)
     eq=pd.Series(dict(curve),dtype=float)
     t=pd.DataFrame(trades)

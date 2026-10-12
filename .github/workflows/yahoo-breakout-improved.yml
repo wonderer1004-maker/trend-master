@@ -1,0 +1,35 @@
+name: Yahoo improved breakout walk-forward backtest
+on:
+  push:
+    paths:
+      - 'scripts/run_yahoo_breakout_improved.py'
+      - 'scripts/run_yahoo_breakout.py'
+      - 'pages/1_신고가_4전략.py'
+      - '.github/workflows/yahoo-breakout-improved.yml'
+  workflow_dispatch:
+jobs:
+  improved:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pandas numpy 'yfinance>=0.2.65'
+      - name: Run train and holdout comparison
+        shell: bash
+        run: |
+          mkdir -p reports/yahoo_breakout/improved
+          set -o pipefail
+          python -u scripts/run_yahoo_breakout_improved.py 2>&1 | tee reports/yahoo_breakout/improved/execution.log
+      - name: Upload all comparisons and trades
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yahoo-improved-train-holdout
+          path: reports/yahoo_breakout/improved/
+          retention-days: 30

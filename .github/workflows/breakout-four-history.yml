@@ -22,11 +22,15 @@ jobs:
       - name: Install dependencies
         run: pip install pandas numpy pykrx
       - name: Run actual historical data check
-        run: python scripts/run_breakout_four_history.py
+        shell: bash
+        run: |
+          mkdir -p reports/breakout_four
+          set -o pipefail
+          python -u scripts/run_breakout_four_history.py 2>&1 | tee reports/breakout_four/execution.log
       - name: Upload report CSVs
-        if: success()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: breakout-four-historical-report
+          name: breakout-four-historical-report-and-debug
           path: reports/breakout_four/
           retention-days: 30

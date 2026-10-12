@@ -1,0 +1,11 @@
+{
+  "cash": 45482180.63519515,
+  "holdings": {},
+  "next_target": null,
+  "data_asof": "2026-09-30",
+  "mode": "PAPER_REPLAY",
+  "pause_remaining": 0,
+  "strategy": "CASH100",
+  "intent_id": null,
+  "action": "HOLD"
+}

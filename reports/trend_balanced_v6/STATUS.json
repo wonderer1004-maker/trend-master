@@ -1,0 +1,20 @@
+{
+  "selected_on_development": "CASH100",
+  "development_worst_cost_calmar": {
+    "CASH100": 0.1600146083553468,
+    "CASH50": 0.14012614417473238,
+    "HYBRID": 0.07036472013532925,
+    "VOL25": 0.029680905232258834,
+    "VOL35": 0.15678368736974874
+  },
+  "improves_both_v5_both_costs": false,
+  "status": "RESEARCH_ONLY_NO_LIVE_BROKER",
+  "limitations": [
+    "reused validation after many trials; overfitting risk",
+    "10 current surviving stocks, not historical full market",
+    "close risk decisions fill next open; gaps exceed loss thresholds",
+    "cash return assumed zero",
+    "leverage, adjusted prices, before account-specific taxes",
+    "no live feed, no broker order routing"
+  ]
+}

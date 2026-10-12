@@ -18,6 +18,8 @@ def fetch(code,start,end):
     for col in ["외국인합계","기관합계"]:
         if col not in v.columns: raise ValueError("수급 컬럼 누락: "+col)
     d=o.join(v[["외국인합계","기관합계"]],how="left")
+    if d[["외국인합계","기관합계"]].isna().any().any():
+        raise ValueError("외국인/기관 수급 데이터 누락: 정확한 조건 검증 불가")
     d=d.rename(columns={"시가":"open","고가":"high","저가":"low","종가":"close","거래량":"volume","외국인합계":"foreign","기관합계":"institution"})
     return d.sort_index()
 
@@ -52,7 +54,7 @@ def simulate(data,mode,capital,allocation,fee,slip):
                 sell=p["entry"]*1.2;reason="익절"
             elif mode=="추세" and age>=1 and float(row.close)<float(row.ma20):
                 sell=float(row.close);reason="20일선 이탈"
-            elif age>=maxdays and mode!="당일":
+            elif age>=maxdays-1 and mode!="당일":
                 sell=float(row.close);reason="기간 종료"
             if sell is not None:
                 net=p["qty"]*sell*(1-slip)*(1-fee)
@@ -141,4 +143,4 @@ if st.button("4전략 백테스트 실행",type="primary"):
         trades=pd.concat(all_trades,ignore_index=True)
         st.download_button("거래내역 CSV 다운로드",trades.to_csv(index=False).encode("utf-8-sig"),"신고가_4전략_거래내역.csv","text/csv")
         st.dataframe(trades,use_container_width=True)
-    st.caption("일봉 고가·저가의 발생 순서를 알 수 없어 장중 손절/익절 체결은 근사치입니다. 미끄러짐·세금은 입력 가정치이며 결과는 실거래 보장이 아닙니다.")
+    st.caption("일봉 고가·저가의 발생 순서를 알 수 없어 장중 손절/익절 체결은 근사치입니다. 진입 당일 손절·익절 미반영, 편도 거래비용은 가정치입니다. 결과는 실거래 보장이 아닙니다.")

@@ -1,0 +1,13 @@
+{
+  "selected_on_development": "CORE30",
+  "outperformed_reused_validation_both_costs": false,
+  "status": "RESEARCH_ONLY_NO_LIVE_BROKER",
+  "risk": "up to 100% in one stock; no leverage; ETF fallback remains equity risk",
+  "limitations": [
+    "10 surviving stocks, not historical whole market",
+    "reused validation, not unseen holdout",
+    "Yahoo adjusted price approximation, independent data verification needed",
+    "close exit -> next open, loss can gap",
+    "no broker routing, no guaranteed market outperformance"
+  ]
+}

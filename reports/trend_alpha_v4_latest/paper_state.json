@@ -1,0 +1,15 @@
+{
+  "cash": 129600.82375201987,
+  "holdings": {
+    "069500.KS": 216
+  },
+  "next_target": null,
+  "last_target": {
+    "069500.KS": 1.0
+  },
+  "data_asof": "2026-10-12",
+  "mode": "PAPER_REPLAY",
+  "strategy": "CORE30",
+  "intent_id": null,
+  "action": "HOLD"
+}

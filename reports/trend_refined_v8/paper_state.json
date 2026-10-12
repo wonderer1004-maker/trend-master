@@ -7,5 +7,13 @@
   "pause_remaining": 0,
   "strategy": "DUAL_BAND45",
   "intent_id": null,
+  "metrics": {
+    "total_return": 4.7342742578245325,
+    "cagr": 0.2956222067708847,
+    "mdd": -0.1881399712440397,
+    "end_value": 57342742.57824533,
+    "order_fills": 377,
+    "avg_exposure": 0.29100404681759584
+  },
   "action": "HOLD"
 }

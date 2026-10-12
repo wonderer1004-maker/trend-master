@@ -21,6 +21,7 @@ def fetch(code,start,end):
     if d[["외국인합계","기관합계"]].isna().any().any():
         raise ValueError("외국인/기관 수급 데이터 누락: 정확한 조건 검증 불가")
     d=d.rename(columns={"시가":"open","고가":"high","저가":"low","종가":"close","거래량":"volume","외국인합계":"foreign","기관합계":"institution"})
+    if d[["foreign","institution"]].isna().any().any(): raise ValueError("수급 데이터 누락")
     return d.sort_index()
 
 def prepare(d,vol_multiple=5):
@@ -128,7 +129,9 @@ if st.button("4전략 백테스트 실행",type="primary"):
                 if not d.empty:data[code]=d
                 else:errors.append(code+": 유효한 데이터 없음")
             except Exception as e:errors.append(code+": "+str(e))
-    if errors:st.error("일부 종목 조회 실패: "+" / ".join(errors))
+    if errors:
+        st.error("종목 조회 실패로 전체 전략 비교를 중단합니다: "+" / ".join(errors))
+        st.stop()
     if not data:st.stop()
     metrics=[];all_trades=[]
     for mode in ["당일","5일","20일","추세"]:

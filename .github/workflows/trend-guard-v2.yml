@@ -1,0 +1,46 @@
+name: Trend Guard V2 research and paper execution
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/trend_guard_v2.py
+      - tests/test_trend_guard_v2.py
+      - .github/workflows/trend-guard-v2.yml
+  schedule:
+    - cron: '10 8 * * 1-5'
+permissions:
+  contents: write
+concurrency:
+  group: trend-guard-v2
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas==2.2.3 numpy==2.2.6 yfinance==0.2.65
+      - name: Execution correctness tests
+        run: python -m unittest discover -s tests -p test_trend_guard_v2.py -v
+      - name: Historical validation
+        run: python -u scripts/trend_guard_v2.py
+      - name: Latest completed daily signals and paper replay
+        run: python -u scripts/trend_guard_v2.py --end "$(date -u +%Y-%m-%d)" --output reports/trend_guard_v2_latest
+      - name: Publish readable reports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f reports/trend_guard_v2 reports/trend_guard_v2_latest
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update Trend Guard V2 research and paper reports'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trend-guard-v2-results
+          path: reports/trend_guard_v2*/

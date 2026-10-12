@@ -7,7 +7,7 @@ from pathlib import Path
 import json
 import numpy as np
 import pandas as pd
-from run_kospi_strategy import download,features,backtest,SYMBOLS,END,INITIAL
+from run_kospi_strategy import download,features,SYMBOLS,END,INITIAL
 
 OUT=Path(__file__).resolve().parents[1]/"reports"/"kospi_regime_v1"
 OUT.mkdir(parents=True,exist_ok=True)
@@ -44,6 +44,92 @@ def entries(d,r,kind):
         sig=((r=="BULL")&(breakout|pullback))|((r=="SIDEWAYS")&range_trade)
     else:raise ValueError(kind)
     return (liquid&sig).fillna(False)
+
+def backtest(data,period_start,period_end,kind):
+    # Signals computed using prior data; orders enter next session open.
+    days=sorted(set().union(*(set(d.loc[period_start:period_end].index) for d in data.values())))
+    cash=float(INITIAL);positions={};trades=[];equity=[]
+    for day in days:
+        # Evaluate signals from previous trading session only.
+        for symbol,d in data.items():
+            if symbol in positions or len(positions)>=5 or day not in d.index:continue
+            i=d.index.get_loc(day)
+            if i==0 or not bool(d["signal"].iloc[i-1]):continue
+            row=d.iloc[i];prev=d.iloc[i-1]
+            buy=float(row.open)*(1+SLIP)
+            stop=buy-max(0.05*buy,2*float(prev.atr))
+            # Cap maximum initial loss at 8% and avoid zero/invalid stops.
+            stop=max(stop,buy*0.92)
+            risk_per_share=buy-stop
+            if not np.isfinite(risk_per_share) or risk_per_share<=0:continue
+            qty=int(min(2_000_000/(buy*(1+COST)),100_000/risk_per_share,
+                        cash/(buy*(1+COST))))
+            if qty<1:continue
+            cost=qty*buy*(1+COST);cash-=cost
+            positions[symbol]={"qty":qty,"buy":buy,"cost":cost,"date":day,
+                               "stop":stop,"target":buy+2*risk_per_share,"age":0}
+            # Entry-day OHLC is evaluated, stop-first if stop and target both hit.
+            sell=None;reason=""
+            if row.low<=stop:sell=stop;reason="entry_day_stop"
+            elif row.high>=buy+2*risk_per_share:sell=buy+2*risk_per_share;reason="entry_day_target"
+            if sell is not None:
+                proceeds=qty*sell*(1-SLIP)*(1-COST);cash+=proceeds
+                trades.append({"전략":kind,"종목":symbol,"매수일":day.strftime("%Y-%m-%d"),
+                               "매도일":day.strftime("%Y-%m-%d"),"매수가":buy,
+                               "매도가":sell,"수량":qty,"실현손익":round(proceeds-cost),
+                               "수익률":proceeds/cost-1,"청산사유":reason})
+                del positions[symbol]
+        # Existing positions exit AFTER today's open purchases. Conservative cash sequencing.
+        for symbol,p in list(positions.items()):
+            d=data[symbol]
+            if day not in d.index:continue
+            row=d.loc[day]; age=p["age"]+1
+            exit_px=None;reason=""
+            if row.open<=p["stop"]:
+                exit_px=float(row.open);reason="gap_stop"
+            elif row.low<=p["stop"]:
+                exit_px=p["stop"];reason="stop"
+            elif row.open>=p["target"]:
+                exit_px=float(row.open);reason="gap_target"
+            elif row.high>=p["target"]:
+                exit_px=p["target"];reason="target"
+            elif age>=20 or (age>=1 and row.close<row.ma20):
+                exit_px=float(row.close);reason="time_or_trend"
+            if exit_px is not None:
+                proceeds=p["qty"]*exit_px*(1-SLIP)*(1-COST)
+                cash+=proceeds
+                trades.append({"전략":kind,"종목":symbol,"매수일":p["date"].strftime("%Y-%m-%d"),
+                               "매도일":day.strftime("%Y-%m-%d"),"매수가":p["buy"],
+                               "매도가":exit_px,"수량":p["qty"],"실현손익":round(proceeds-p["cost"]),
+                               "수익률":proceeds/p["cost"]-1,"청산사유":reason})
+                del positions[symbol]
+            else:p["age"]=age
+        # Existing positions sold at today's close cannot finance today's open buys.
+        value=cash
+        for symbol,p in positions.items():
+            d=data[symbol].loc[:day]
+            if not d.empty:value+=p["qty"]*float(d.close.iloc[-1])
+        equity.append((day,value))
+    # Liquidate at final close for accurate realized total.
+    if days:
+        for symbol,p in list(positions.items()):
+            d=data[symbol].loc[:days[-1]]
+            if d.empty:continue
+            px=float(d.close.iloc[-1]);proceeds=p["qty"]*px*(1-SLIP)*(1-COST)
+            cash+=proceeds
+            trades.append({"전략":kind,"종목":symbol,"매수일":p["date"].strftime("%Y-%m-%d"),
+                           "매도일":days[-1].strftime("%Y-%m-%d"),"매수가":p["buy"],
+                           "매도가":px,"수량":p["qty"],"실현손익":round(proceeds-p["cost"]),
+                           "수익률":proceeds/p["cost"]-1,"청산사유":"end_of_test"})
+        equity[-1]=(days[-1],cash)
+    eq=pd.Series(dict(equity),dtype=float).sort_index()
+    trades=pd.DataFrame(trades)
+    years=max((eq.index[-1]-eq.index[0]).days/365.25,1/365.25)
+    return {"전략":kind,"기간":period_start[:4]+"-"+period_end[:4],
+            "거래수":len(trades),"누적손익":round(cash-INITIAL),
+            "총수익률":cash/INITIAL-1,"CAGR":(cash/INITIAL)**(1/years)-1,
+            "MDD":float((eq/eq.cummax()-1).min()),
+            "승률":float((trades["실현손익"]>0).mean()) if len(trades) else 0},trades,eq
 
 def main():
     errors={};raw={}
@@ -87,7 +173,7 @@ def main():
         "regime":"bull above 200MA by 2%, 20MA>60MA, 60-day return>3%; bear below 200MA by 2%, 20MA<60MA, 60-day return<-3%; otherwise sideways",
         "strategies":kinds,"bear_policy":"no new buys; existing positions follow original stop/trend exits",
         "universe":"10 KOSPI survivors, not full KOSPI; survivorship bias",
-        "trade_execution":"next session open; daily OHLC stop-first approximation",
+        "trade_execution":"next session open; new purchases funded only by start-of-day cash; stop-first daily OHLC approximation",
         "fees":"0.1% fee plus 0.1% slippage each side",
         "split":"2020-2023 train; 2024-2026-09 holdout",
         "limitations":["not market-wide","no leverage or shorting","no regime-change forced liquidation",

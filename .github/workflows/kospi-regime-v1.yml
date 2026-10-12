@@ -31,3 +31,5 @@ jobs:
           name: kospi-regime-v1-results
           path: reports/kospi_regime_v1/
           retention-days: 30
+
+# Final R1-R3 backtest rerun requested 2026-10-12.

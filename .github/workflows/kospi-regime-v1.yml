@@ -35,3 +35,5 @@ jobs:
 # Final R1-R3 backtest rerun requested 2026-10-12.
 
 # Requested new Yahoo KOSPI R1-R3 backtest on 2026-10-12.
+
+# Trigger backtest and upload comparison.csv plus execution.log.

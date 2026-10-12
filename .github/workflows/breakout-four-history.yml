@@ -1,5 +1,10 @@
 name: Real historical breakout backtest
 on:
+  push:
+    paths:
+      - 'scripts/run_breakout_four_history.py'
+      - 'pages/1_신고가_4전략.py'
+      - '.github/workflows/breakout-four-history.yml'
   workflow_dispatch:
   schedule:
     - cron: '15 1 * * 1'

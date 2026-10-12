@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,6 +24,14 @@ jobs:
           mkdir -p reports/kospi_regime_v1
           set -o pipefail
           python -u scripts/run_kospi_regime_v1.py 2>&1 | tee reports/kospi_regime_v1/execution.log
+      - name: Publish summary into repository for easy access
+        if: success()
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f reports/kospi_regime_v1/comparison.csv reports/kospi_regime_v1/methodology.json reports/kospi_regime_v1/execution.log
+          git diff --cached --quiet || (git commit -m "Publish verified KOSPI regime backtest results" && git push)
       - name: Upload results or failure log
         if: always()
         uses: actions/upload-artifact@v4

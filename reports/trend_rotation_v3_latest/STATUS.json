@@ -1,0 +1,18 @@
+{
+  "selected_on_development": "MOM3",
+  "selection_score": {
+    "MOM3": 0.03558345674908575,
+    "CORE50": -0.00236353422049157,
+    "MOM5": 0.027122971387369688
+  },
+  "status": "RESEARCH_ONLY_NO_LIVE_BROKER",
+  "beats_benchmark_return": false,
+  "limitations": [
+    "10 current surviving stocks; survivorship bias",
+    "2024+ reused validation, not unseen holdout",
+    "Yahoo adjusted price reinvestment approximation; not execution quotes",
+    "Fixed research fee/tax/slippage, not current tax advice",
+    "No order routing, partial-fill reconciliation or live feed",
+    "Daily close stops -> next open; gaps can exceed risk limits"
+  ]
+}

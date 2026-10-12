@@ -1,0 +1,11 @@
+{
+  "cash": 31066027.534723565,
+  "holdings": {},
+  "next_target": null,
+  "data_asof": "2026-10-12",
+  "mode": "PAPER_REPLAY",
+  "strategy": "MOM3",
+  "regime": "BULL",
+  "intent_id": null,
+  "action": "HOLD"
+}

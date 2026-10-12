@@ -1,0 +1,13 @@
+{
+  "cash": 20752970.21327042,
+  "holdings": {
+    "055550.KS": 100
+  },
+  "next_target": {},
+  "data_asof": "2026-09-30",
+  "mode": "PAPER_REPLAY",
+  "strategy": "MOM3",
+  "regime": "BULL",
+  "intent_id": "884729464151a83476680316bb3874d77be4013817616107452ac88cd44e9f99",
+  "action": "REBALANCE_NEXT_OPEN"
+}

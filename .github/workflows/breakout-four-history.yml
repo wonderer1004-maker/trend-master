@@ -34,3 +34,5 @@ jobs:
           name: breakout-four-historical-report-and-debug
           path: reports/breakout_four/
           retention-days: 30
+
+# Manual backtest start requested on 2026-10-12; push triggers historical job.

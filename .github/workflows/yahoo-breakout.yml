@@ -1,0 +1,36 @@
+name: Yahoo breakout screen and backtest
+on:
+  push:
+    paths:
+      - 'scripts/run_yahoo_breakout.py'
+      - '.github/workflows/yahoo-breakout.yml'
+      - 'pages/1_신고가_4전략.py'
+  workflow_dispatch:
+  schedule:
+    - cron: '30 7 * * 1-5'
+jobs:
+  yahoo-backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install packages
+        run: pip install pandas numpy yfinance
+      - name: Screen and backtest Yahoo history
+        shell: bash
+        run: |
+          mkdir -p reports/yahoo_breakout
+          set -o pipefail
+          python -u scripts/run_yahoo_breakout.py 2>&1 | tee reports/yahoo_breakout/execution.log
+      - name: Upload screening and backtest results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yahoo-breakout-screen-and-backtest
+          path: reports/yahoo_breakout/
+          retention-days: 30

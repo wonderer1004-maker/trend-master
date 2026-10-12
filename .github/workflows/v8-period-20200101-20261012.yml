@@ -1,0 +1,39 @@
+name: V8 fixed strategy 2020-01-01 to 2026-10-12
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/run_v8_period.py
+      - .github/workflows/v8-period-20200101-20261012.yml
+permissions:
+  contents: write
+concurrency:
+  group: v8-period-20200101-20261012
+  cancel-in-progress: false
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas==2.2.3 numpy==2.2.6 yfinance==0.2.65
+      - run: python -m unittest discover -s tests -p 'test_trend_*v*.py' -q
+      - run: python -u scripts/run_v8_period.py --start 2020-01-01 --end 2026-10-12 --data-dir reports/v8_20240101_20261012/input --output reports/v8_20200101_20261012
+      - name: Publish dated report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f reports/v8_20200101_20261012
+          if ! git diff --cached --quiet; then
+            git commit -m 'Report fixed V8 backtest 2020-01-01 through 2026-10-12'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v8-20200101-20261012-results
+          path: reports/v8_20200101_20261012/

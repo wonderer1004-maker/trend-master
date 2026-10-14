@@ -1,0 +1,75 @@
+{
+  "locked_utc": "2026-10-14T15:01:03.767233+00:00",
+  "universe": {
+    "KR": [
+      "069500.KS",
+      "091160.KS",
+      "139260.KS",
+      "091170.KS",
+      "102970.KS",
+      "091180.KS"
+    ],
+    "US": [
+      "SPY",
+      "IWM",
+      "XLK",
+      "XLF",
+      "XLE",
+      "SMH"
+    ]
+  },
+  "end": "2026-10-13",
+  "start": "2015-01-01",
+  "models": [
+    "HOLD_EQUAL",
+    "ALWAYS_INVVOL",
+    "SMA200",
+    "BREAK60",
+    "BREAK120",
+    "MA50_200",
+    "BLEND"
+  ],
+  "periods": {
+    "early": [
+      "2015-01-01",
+      "2021-12-31"
+    ],
+    "validation": [
+      "2022-01-01",
+      "2024-12-31"
+    ],
+    "recent": [
+      "2025-01-01",
+      "2026-10-13"
+    ],
+    "full": [
+      "2015-01-01",
+      "2026-10-13"
+    ]
+  },
+  "normal_cost_oneway": 0.001,
+  "stress_cost_oneway": 0.005,
+  "cap": 0.2,
+  "vol_window": 60,
+  "parameters": [
+    60,
+    20,
+    120,
+    60,
+    50,
+    200
+  ],
+  "signal": "end of day -> next open; breakout uses prior bars only; equal retains state; initial cash; no leverage no ATR stop",
+  "allocation": "inverse vol all fixed universe, cap20%, no renormalization; weekly last market day and first signal; daily changed signals update only affected asset using last caps; existing desired weights for others unchanged",
+  "price": "OHLC multiplied adjclose/close; synthetic total return proxy; fractional units; no taxes or cash interest; distributions reinvestment proxy not actual pay-date execution",
+  "primary_test": "fixed BLEND vs simpler models, no optimizing winner; sensitivity +/-20% channel periods jointly, MA periods jointly, vol lookback separately",
+  "independent_holdout": false,
+  "limitations": [
+    "fixed surviving ETFs",
+    "same history already inspected",
+    "no KRX corporate-action verification",
+    "KR USD results separate no FX comparison",
+    "not full account combined with long-term holdings"
+  ],
+  "data_amendment_before_results": "KR Yahoo has missing dates: replace all KR OHLC with Naver, price-only no dividends. US adjusted OHLC synthetic total return proxy. Do not compare returns across currencies."
+}

@@ -1,6 +1,22 @@
 {
   "start": "2026-10-13",
   "locked_paper_model": "DUAL_BAND45",
-  "observations": 0,
-  "status": "WAITING_FOR_NEW_PERIOD"
+  "observations": 2,
+  "status": "FORWARD_RESEARCH_IN_PROGRESS",
+  "candidate": {
+    "total_return": 0.0,
+    "cagr": 0.0,
+    "mdd": 0.0,
+    "end_value": 10000000.0,
+    "order_fills": 0,
+    "avg_exposure": 0.0
+  },
+  "v7": {
+    "total_return": 0.0,
+    "cagr": 0.0,
+    "mdd": 0.0,
+    "end_value": 10000000.0,
+    "order_fills": 0,
+    "avg_exposure": 0.0
+  }
 }

@@ -1,0 +1,336 @@
+[
+  {
+    "symbol": "SPY",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/SPY?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:03:55.834875+00:00",
+    "raw_response_sha256": "4ad928998acebc5e001aa98feff0a1dd78aa3358ec5f945f384ce6ce73ae4938",
+    "csv_sha256": "d5e4bef44fb6bc13772b98dd41e2bf5b99e8c12672071579bc440d5fe266dc0e",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "QQQ",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/QQQ?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:03:55.942803+00:00",
+    "raw_response_sha256": "e7cdf7689624e61a62f65f70a331d785a840b636e846799444003de4a71c19d6",
+    "csv_sha256": "2fe6bd9527db5b05f94ce4f72ec900b7bcbf8169264c41ee15b79466605ff399",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "IWM",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/IWM?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:03:55.939892+00:00",
+    "raw_response_sha256": "3d1f5e3ea4a6d7638b10801128c1210fe1552c8a924345de59ea1a35735e9456",
+    "csv_sha256": "6b0211f6144788a32815b867957aa02abb2996eab3b4e5539cc5187a05645a63",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "EFA",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/EFA?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:02.194702+00:00",
+    "raw_response_sha256": "fcc1f865c57724aa233e0472b4415c7260f7a624e95faa62eeea193ba4d5feab",
+    "csv_sha256": "b143864e58d2688511ad5c15b5ee4641bc981117e53acd08fc3ae5f4b4b759f0",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "EEM",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/EEM?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:02.259637+00:00",
+    "raw_response_sha256": "5b202867756527218573e89c602e795b8fbe1a0880cebe40ce753e3b9b6bb110",
+    "csv_sha256": "e3e7e96e57f27ab8bd0f75567700de60d04ff6dfcb89e889b8dce62a76369874",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "IEF",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/IEF?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:02.292294+00:00",
+    "raw_response_sha256": "5da888a83ae317351000646e8bab5675582ce444cee5a7a1f04fb989a86e38be",
+    "csv_sha256": "ae9bc19877129344f330ea63a57a824f6de4510be070396218daecda776eebce",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "GLD",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/GLD?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:08.377028+00:00",
+    "raw_response_sha256": "ac43dd02755e30874f7e7e6373d54bda31502299a597f89155d8f1abc3ef2751",
+    "csv_sha256": "1064b2e9cfd9cc7e48f33d9c62aaabbc8e028d4975cf84480141b85bb33166dd",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "TLT",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/TLT?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:08.504671+00:00",
+    "raw_response_sha256": "f28e64937a0a8733c8662c9ec0e349bfc9566e2d93a0ffaedc643a2a6f5b6cb0",
+    "csv_sha256": "6bb13c385bf1dd881097274893004484d9fef6e10d9adee9044dfd6cfce4f6db",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "DBC",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/DBC?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:08.516110+00:00",
+    "raw_response_sha256": "3a286a79fb93b8e7d4ec5426519346eae9604293f335fd4a922e4b2146839c3f",
+    "csv_sha256": "656eec3a43af738bdbb981ef48bc7860bef89cde985cfae3ac53da63b4a026eb",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "069500.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/069500.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:14.440843+00:00",
+    "raw_response_sha256": "0808a5003fa3a7e58c94d0ed9d3f23823e8ad3443aa04321db67dbcd76d99dc7",
+    "csv_sha256": "7a1f865117b7240fa572f98a545e3c73632b691aec59f40c567fea78e5342328",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2367,
+    "omitted_nan_sessions": [
+      "2018-02-05",
+      "2018-03-02",
+      "2018-03-05",
+      "2019-01-08",
+      "2020-06-19",
+      "2020-07-03",
+      "2022-02-14",
+      "2022-05-02",
+      "2023-05-18",
+      "2023-05-24",
+      "2023-07-03",
+      "2023-07-04",
+      "2023-07-05",
+      "2023-07-06",
+      "2023-07-11",
+      "2023-07-12",
+      "2023-07-13",
+      "2023-07-18",
+      "2023-07-25",
+      "2023-07-27",
+      "2023-07-31",
+      "2023-08-01",
+      "2023-08-02",
+      "2024-01-18",
+      "2024-08-27",
+      "2024-10-30",
+      "2024-11-05"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "SHY",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/SHY?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:14.662251+00:00",
+    "raw_response_sha256": "dd7d5aa0b84536f82bd54febe8cf630ad0a92257c0155b1492f7793a85755906",
+    "csv_sha256": "5fcb82c7b25532b6db9bee0293e15f45ecd9e428461a050999e286dcad302574",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "VNQ",
+    "market": "us",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/VNQ?period1=1167609600&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:14.702088+00:00",
+    "raw_response_sha256": "35b5f04ab4b9e24283e0a388e7e3b5a9ec2ed18d5905ca74d386b3b42fbee605",
+    "csv_sha256": "76c2d84b51815865f21cd71d822a41ec908169cd58628dc9ee37eea2e18e9c32",
+    "first": "2007-01-03",
+    "last": "2026-10-16",
+    "rows": 4979,
+    "omitted_nan_sessions": [],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "005380.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/005380.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:20.459405+00:00",
+    "raw_response_sha256": "e5d4ac4be8b961aba597fd420265808193c0cf0c5185b455edefc6fe113ce2c0",
+    "csv_sha256": "cedf11f8410cc1cef9f864a87aff79940b7611149f09f738684ae88781fa2b0e",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "005930.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/005930.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:20.479130+00:00",
+    "raw_response_sha256": "a219053946ded2e9e882fa43477a742a265e12fe9e05aa7d88b101cbc7db0b7f",
+    "csv_sha256": "e9be80976232b3d7024eba3643287d72a450e77c76aeae1caa9c258e5af47c6a",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "000660.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/000660.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:20.494021+00:00",
+    "raw_response_sha256": "bd8ada1b2ee621a84143499a8855a4e3d95ebd05466cbd452ff85eaeb6f11607",
+    "csv_sha256": "01a1d2c6eb5da0561e332203cbedcf980e74c8e31c0eb27b6acf80e7e66d60f0",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "051910.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/051910.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:26.648071+00:00",
+    "raw_response_sha256": "451b0b422a64b2539e4d1cc3639bd9e0cc36e5f282405c9b80be0d28dd5ba993",
+    "csv_sha256": "dcb99d0e0871c96eb6078f70f95ed41e9e168005b0c278c7b62103e70107635e",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "005490.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/005490.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:26.697025+00:00",
+    "raw_response_sha256": "552d36656dd260ed552be772be7c766ce5ad6fc46ffc92da7b000db33bca19d7",
+    "csv_sha256": "5cd579d6e2d27b29b254c77dcd02139d60fe9ac8b7439d3358407ea082020c7f",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "035420.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/035420.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:26.712393+00:00",
+    "raw_response_sha256": "00325ebf086cf4d41cd4d27dd6208f7125b599022ede05b27f6ea28378938c6c",
+    "csv_sha256": "0d0ca91901a9d53f60de7bc59b8c3ab86038932f74f794442f59669a8dbcefe7",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "006400.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/006400.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:32.890449+00:00",
+    "raw_response_sha256": "3b69fade41994a8f75b2b75acd6d6daa41eefcf0937a2f5a31d674145b7e2a5c",
+    "csv_sha256": "eb0c5395c00fc04ac7a7e488d23c1c601edf0a4e1ce779db2eb2338283dcd004",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "012330.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/012330.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:32.911202+00:00",
+    "raw_response_sha256": "b4a9148917da80fed9180b6b6f0d6355894b62676955398991a49b516ac9b7e3",
+    "csv_sha256": "5c5819fc2ef38f88191dd3d669940119fcb50eee153f68a68c817bb3fa496f9e",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "068270.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/068270.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:32.965023+00:00",
+    "raw_response_sha256": "8208979eb50c40b1491c2bed262d1599d9894987db9878c43435ff474e58ea7f",
+    "csv_sha256": "6fabc72849f4cd8848a8a668e140c2d200b25240d098d37566b8c3ab9141106b",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  },
+  {
+    "symbol": "055550.KS",
+    "market": "kr",
+    "source": "https://query2.finance.yahoo.com/v8/finance/chart/055550.KS?period1=1483228800&period2=1792195200&interval=1d&events=div%2Csplits",
+    "retrieved_at": "2026-10-17T05:04:39.052385+00:00",
+    "raw_response_sha256": "5570578d7614157fc5c40e3358b66e76b34af7bbdf4a59c4fc5a1ef6872a750e",
+    "csv_sha256": "9569fbc4c96898081fca09cc72c43eb5cc67858bf8852a3079c205ff48cc1f2a",
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "rows": 2393,
+    "omitted_nan_sessions": [
+      "2025-09-19"
+    ],
+    "adjustment": "Yahoo adjclose/close ratio applied to OHLC; volume unchanged; cash dividends not separately reinvested"
+  }
+]

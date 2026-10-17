@@ -1,0 +1,9 @@
+{
+  "report.py": "1287e9d55b4aba658d8a918710e485f801f968f5fb5e13ae93f4fbe16c8d3aa7",
+  "intraday.py": "8d4ee738f0eb41ffd42d00374c228274f2cadaec50383de5687738825b42864f",
+  "download.py": "6545bd7d1c15612db428cbe2952926330f1a7ffef81920ade57b30f5025a24b8",
+  "paper.py": "a62d89236c14ca3c0a94d53ee674e30fe31f9b79c387d1acf461bd19a876ff2b",
+  "test_engine.py": "a9b49f26d1889ae0caa69c9f8f0dfee12e8146ec2cd08cef016945b7dbea574d",
+  "engine.py": "b2c3fcbb7a63394178ab59c7009affa8cb986c3eab8600c9e4842f6abc07a4ff",
+  "run.py": "121f1b1f6dff09d5c8be832373ca5e7e53f55fcc27b12e54ebc1198f8342bb7a"
+}

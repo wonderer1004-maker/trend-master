@@ -1,0 +1,26 @@
+{
+  "market": "kr",
+  "strategy": "BREAK20",
+  "as_of": "2026-10-16",
+  "generated_at": "2026-10-17T07:12:37.584890+00:00",
+  "mode": "RESEARCH_WATCHLIST",
+  "live_enabled": false,
+  "broker_orders": [],
+  "watchlist": [
+    {
+      "symbol": "068270.KS",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 194000.0,
+      "indicative_stop": 183392.85714285713,
+      "indicative_quantity": 23,
+      "reference_notional": 4462000.0,
+      "risk_budget": 250000.0
+    }
+  ],
+  "blocks": [
+    "broker adapter absent",
+    "historical survivor universe; independent forward validation required",
+    "adjusted-price research units require corporate-action mapping before trading",
+    "validation/test index-outperformance gate failed"
+  ]
+}

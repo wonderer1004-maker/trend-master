@@ -1,0 +1,116 @@
+{
+  "market": "us",
+  "strategy": "MOM20",
+  "as_of": "2026-10-16",
+  "generated_at": "2026-10-17T07:12:37.199951+00:00",
+  "mode": "RESEARCH_WATCHLIST",
+  "live_enabled": false,
+  "broker_orders": [],
+  "watchlist": [
+    {
+      "symbol": "AAPL",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 343.4599914550781,
+      "indicative_stop": 330.0799865722656,
+      "indicative_quantity": 18,
+      "reference_notional": 6182.279846191406,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "AMZN",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 250.0,
+      "indicative_stop": 238.19571140834262,
+      "indicative_quantity": 21,
+      "reference_notional": 5250.0,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "CVX",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 224.9900054931641,
+      "indicative_stop": 215.98286437988284,
+      "indicative_quantity": 27,
+      "reference_notional": 6074.730148315431,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "GOOGL",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 340.5899963378906,
+      "indicative_stop": 322.6685703822545,
+      "indicative_quantity": 13,
+      "reference_notional": 4427.669952392578,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "KO",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 93.9000015258789,
+      "indicative_stop": 90.9971444266183,
+      "indicative_quantity": 86,
+      "reference_notional": 8075.400131225586,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "META",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 709.3300170898438,
+      "indicative_stop": 665.1014491489956,
+      "indicative_quantity": 5,
+      "reference_notional": 3546.6500854492188,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "MSFT",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 529.0499877929688,
+      "indicative_stop": 505.5685511997768,
+      "indicative_quantity": 10,
+      "reference_notional": 5290.4998779296875,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "NVDA",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 214.1300048828125,
+      "indicative_stop": 202.6071493966239,
+      "indicative_quantity": 21,
+      "reference_notional": 4496.7301025390625,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "PFE",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 29.57999992370605,
+      "indicative_stop": 28.430000305175778,
+      "indicative_quantity": 217,
+      "reference_notional": 6418.859983444213,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "WMT",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 118.80999755859376,
+      "indicative_stop": 113.7414245605469,
+      "indicative_quantity": 49,
+      "reference_notional": 5821.689880371095,
+      "risk_budget": 250.0
+    },
+    {
+      "symbol": "XOM",
+      "signal_date": "2026-10-16",
+      "reference_adjusted_close": 178.97999572753906,
+      "indicative_stop": 171.94571358816964,
+      "indicative_quantity": 35,
+      "reference_notional": 6264.299850463867,
+      "risk_budget": 250.0
+    }
+  ],
+  "blocks": [
+    "broker adapter absent",
+    "historical survivor universe; independent forward validation required",
+    "adjusted-price research units require corporate-action mapping before trading",
+    "validation/test index-outperformance gate failed"
+  ]
+}

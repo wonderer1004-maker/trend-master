@@ -1,0 +1,25 @@
+{
+  "us": {
+    "selected_on_development_only": "VOL15",
+    "eligible_scores": {
+      "CORE50": 0.3458394520127716,
+      "VOL15": 0.6102445187865119
+    },
+    "no_claim_of_independent_unseen_data": true
+  },
+  "kr": {
+    "selected_on_development_only": "LOWVOL",
+    "eligible_scores": {
+      "CORE50": 0.2724806373533985,
+      "DUAL12": 0.28593063378770966,
+      "ENSEMBLE": 0.5005022301393621,
+      "HIGH52": 0.49256063314847415,
+      "INVVOL": 0.42750928582407655,
+      "LOWVOL": 0.5727416237343846,
+      "MA10M": 0.5604104002215964,
+      "MA200": 0.3162131231649335,
+      "TSM12": 0.5647796274436011
+    },
+    "no_claim_of_independent_unseen_data": true
+  }
+}

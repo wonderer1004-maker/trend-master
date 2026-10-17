@@ -1,0 +1,63 @@
+{
+  "candidates": {
+    "MA200": "benchmark above 200-day mean; daily state changes",
+    "MA10M": "benchmark above 10 completed month-end mean; monthly",
+    "TSM12": "each asset positive 252-session return versus defensive hurdle; 1/N slots",
+    "CSM12_1": "top 3 by return from 252 sessions ago to 21 sessions ago; monthly",
+    "DUAL12": "top 3 by 252-session return, each must beat SHY (US) or zero (KR); monthly",
+    "HIGH52": "top 3 by close / 252-session high; monthly",
+    "LOWVOL": "lowest 60-session volatility top 3; monthly; not BAB replication",
+    "INVVOL": "all assets weighted by inverse 60-session volatility; monthly; not exact risk parity",
+    "VOL15": "benchmark weight min(1, 15%/20-session annual volatility); daily with 5pp target band",
+    "BREAKOUT55": "benchmark close breaks prior 55-session high; exit below prior 20-session low; daily",
+    "R2": "benchmark above MA200, RSI2 falls 3 days with first below65; exit RSI2>75; daily next open",
+    "ENSEMBLE": "equal 1/3 blend of MA10M, TSM12 and DUAL12; monthly",
+    "CORE50": "50% benchmark + 50% DUAL12; monthly",
+    "MOM_VOL18": "CSM12_1 weights scaled by min(1,18%/60-session portfolio volatility); monthly"
+  },
+  "selection": "development: choose highest worst-case Calmar across costs1/2 and delays1/2, requiring CAGR>0 and >=60% of benchmark CAGR, risk-asset exposure>=35%; no later data used",
+  "development": {
+    "us": [
+      "2010-01-01",
+      "2018-12-31"
+    ],
+    "kr": [
+      "2020-01-01",
+      "2023-12-31"
+    ]
+  },
+  "local_run": "fixed rules, no parameter grid or retry until winner",
+  "initial": {
+    "us": 100000,
+    "kr": 10000000
+  },
+  "execution": "signals at close, next session open; delay2 also tested",
+  "costs": {
+    "us": {
+      "fee_each_side": 0.0002,
+      "slippage_each_side": 0.0005,
+      "sell_tax": 0
+    },
+    "kr": {
+      "fee_each_side": 0.0005,
+      "slippage_each_side": 0.001,
+      "stock_sell_tax": 0.002,
+      "etf_sell_tax": 0
+    }
+  },
+  "assumptions": [
+    "fractional adjusted units, not actual whole-share broker sizing",
+    "Yahoo adjclose ratio approximates pre-tax dividend reinvestment; distributions not added again",
+    "US USD returns exclude KRW/USD FX and personal Korean overseas capital gains taxes",
+    "fixed sell taxes are research assumptions, not actual historical tax schedule",
+    "cash interest zero; US defensive holdings use SHY adjusted prices",
+    "signals use only past/current prices; monthly actions only after observed completed month-end",
+    "equal exposure controls compare risk-asset budget, NOT matched volatility/beta",
+    "no short selling, borrowing, synthesized leveraged returns or optimized parameters",
+    "all data and periods are historical; development split is not proof of untouched data",
+    "Korean 10 surviving stocks are not all-market or survivorship-free",
+    "US fixed long-lived ETF universe selected today introduces universe-selection bias",
+    "Korean source missing daily bars require disclosed calendar intersection",
+    "daily OHLC cannot verify 09:05 execution or intraday fills; market impact not modeled"
+  ]
+}

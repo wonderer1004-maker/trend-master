@@ -1,0 +1,35 @@
+name: Quant literature survey V2 fixed-rule backtests
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/quant_survey_v2/**
+      - .github/workflows/quant-survey-v2.yml
+permissions:
+  contents: read
+concurrency:
+  group: quant-survey-v2
+  cancel-in-progress: false
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas==2.2.3 numpy==2.3.5
+      - run: python -m unittest discover -s research/quant_survey_v2 -p 'test_*.py' -v
+      - name: Reproduce 564 cases from hash-verified price snapshots
+        run: python -u research/quant_survey_v2/run.py
+      - name: Publish comparison to run summary
+        run: cat reports/quant_survey_v2/README_KO.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quant-survey-v2-research-and-results
+          path: |
+            reports/quant_survey_v2/
+            research/quant_survey_v2/input/
+          retention-days: 90

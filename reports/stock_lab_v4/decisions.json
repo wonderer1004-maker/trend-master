@@ -1,0 +1,182 @@
+[
+  {
+    "market": "us",
+    "strategy": "MOM20",
+    "selection": "max training Sharpe, base costs lump; ties fixed candidate order",
+    "research_gate": false,
+    "live_enabled": false,
+    "status": "CASH_BLOCKED",
+    "checks": [
+      {
+        "window": "validation",
+        "stress": 1,
+        "flow": "lump",
+        "positive": false,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 118
+      },
+      {
+        "window": "validation",
+        "stress": 1,
+        "flow": "monthly",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 118
+      },
+      {
+        "window": "validation",
+        "stress": 2,
+        "flow": "lump",
+        "positive": false,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 118
+      },
+      {
+        "window": "validation",
+        "stress": 2,
+        "flow": "monthly",
+        "positive": false,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 118
+      },
+      {
+        "window": "test",
+        "stress": 1,
+        "flow": "lump",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 174
+      },
+      {
+        "window": "test",
+        "stress": 1,
+        "flow": "monthly",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 174
+      },
+      {
+        "window": "test",
+        "stress": 2,
+        "flow": "lump",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 174
+      },
+      {
+        "window": "test",
+        "stress": 2,
+        "flow": "monthly",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 174
+      }
+    ],
+    "reason": "fixed surviving-stock sample; no independent forward paper record; live broker not connected"
+  },
+  {
+    "market": "us",
+    "strategy": "ORB5/ORB15",
+    "status": "CASH_BLOCKED",
+    "live_enabled": false,
+    "reason": "only recent 60-session raw 5-minute sample; insufficient independent evidence"
+  },
+  {
+    "market": "kr",
+    "strategy": "BREAK20",
+    "selection": "max training Sharpe, base costs lump; ties fixed candidate order",
+    "research_gate": false,
+    "live_enabled": false,
+    "status": "CASH_BLOCKED",
+    "checks": [
+      {
+        "window": "validation",
+        "stress": 1,
+        "flow": "lump",
+        "positive": false,
+        "outperform_all": true,
+        "mdd_better_all": true,
+        "trades": 76
+      },
+      {
+        "window": "validation",
+        "stress": 1,
+        "flow": "monthly",
+        "positive": true,
+        "outperform_all": true,
+        "mdd_better_all": true,
+        "trades": 76
+      },
+      {
+        "window": "validation",
+        "stress": 2,
+        "flow": "lump",
+        "positive": false,
+        "outperform_all": true,
+        "mdd_better_all": true,
+        "trades": 76
+      },
+      {
+        "window": "validation",
+        "stress": 2,
+        "flow": "monthly",
+        "positive": false,
+        "outperform_all": true,
+        "mdd_better_all": true,
+        "trades": 76
+      },
+      {
+        "window": "test",
+        "stress": 1,
+        "flow": "lump",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 116
+      },
+      {
+        "window": "test",
+        "stress": 1,
+        "flow": "monthly",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 116
+      },
+      {
+        "window": "test",
+        "stress": 2,
+        "flow": "lump",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 116
+      },
+      {
+        "window": "test",
+        "stress": 2,
+        "flow": "monthly",
+        "positive": true,
+        "outperform_all": false,
+        "mdd_better_all": true,
+        "trades": 116
+      }
+    ],
+    "reason": "fixed surviving-stock sample; no independent forward paper record; live broker not connected"
+  },
+  {
+    "market": "kr",
+    "strategy": "ORB5/ORB15",
+    "status": "CASH_BLOCKED",
+    "live_enabled": false,
+    "reason": "only recent 60-session raw 5-minute sample; insufficient independent evidence"
+  }
+]

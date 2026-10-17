@@ -1,0 +1,34 @@
+name: Stock day and swing lab v4
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research/stock_lab_v4/**'
+      - '.github/workflows/stock-lab-v4.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas==2.2.3 numpy==2.3.5 matplotlib==3.10.8
+      - run: python -m unittest discover -s research/stock_lab_v4 -p 'test_*.py' -v
+      - run: python research/stock_lab_v4/run.py
+      - run: |
+          python research/stock_lab_v4/paper.py --market us --capital 100000
+          python research/stock_lab_v4/paper.py --market kr --capital 100000000
+          python research/stock_lab_v4/report.py
+          python research/stock_lab_v4/plot.py
+          cat reports/stock_lab_v4/RESULT_KO.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock-lab-v4-reproducible
+          path: |
+            reports/stock_lab_v4/
+            research/stock_lab_v4/input/
+          retention-days: 90

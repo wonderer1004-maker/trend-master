@@ -1,0 +1,433 @@
+{
+  "us": {
+    "symbols": [
+      "AAPL",
+      "AMD",
+      "AMZN",
+      "BAC",
+      "CSCO",
+      "CVX",
+      "GOOGL",
+      "IBM",
+      "INTC",
+      "JNJ",
+      "JPM",
+      "KO",
+      "META",
+      "MSFT",
+      "NVDA",
+      "ORCL",
+      "PEP",
+      "PFE",
+      "WMT",
+      "XOM"
+    ],
+    "invalid_source_ohlc_removed": {
+      "META_1d.csv.gz": [],
+      "PEP_1d.csv.gz": [],
+      "INTC_1d.csv.gz": [],
+      "GOOGL_1d.csv.gz": [],
+      "IBM_1d.csv.gz": [],
+      "NVDA_1d.csv.gz": [],
+      "AAPL_1d.csv.gz": [],
+      "ORCL_1d.csv.gz": [],
+      "WMT_1d.csv.gz": [],
+      "BAC_1d.csv.gz": [],
+      "JPM_1d.csv.gz": [],
+      "QQQ_1d.csv.gz": [],
+      "CSCO_1d.csv.gz": [],
+      "AMD_1d.csv.gz": [],
+      "KO_1d.csv.gz": [],
+      "PFE_1d.csv.gz": [],
+      "MSFT_1d.csv.gz": [],
+      "AMZN_1d.csv.gz": [],
+      "JNJ_1d.csv.gz": [],
+      "SPY_1d.csv.gz": [],
+      "CVX_1d.csv.gz": [],
+      "XOM_1d.csv.gz": []
+    },
+    "daily_missing_vs_benchmark": {
+      "AAPL": [],
+      "AMD": [],
+      "AMZN": [],
+      "BAC": [],
+      "CSCO": [],
+      "CVX": [],
+      "GOOGL": [],
+      "IBM": [],
+      "INTC": [],
+      "JNJ": [],
+      "JPM": [],
+      "KO": [],
+      "META": [],
+      "MSFT": [],
+      "NVDA": [],
+      "ORCL": [],
+      "PEP": [],
+      "PFE": [],
+      "WMT": [],
+      "XOM": []
+    },
+    "intraday": {
+      "5": {
+        "AAPL": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "AMD": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "AMZN": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "CSCO": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "GOOGL": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "INTC": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "META": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "MSFT": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "NVDA": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "ORCL": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        }
+      },
+      "15": {
+        "AAPL": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "AMD": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "AMZN": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "CSCO": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "GOOGL": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "INTC": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "META": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "MSFT": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "NVDA": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        },
+        "ORCL": {
+          "complete_sessions": 60,
+          "rejected_dates": []
+        }
+      }
+    }
+  },
+  "kr": {
+    "symbols": [
+      "000660.KS",
+      "005380.KS",
+      "005490.KS",
+      "005930.KS",
+      "006400.KS",
+      "012330.KS",
+      "035420.KS",
+      "051910.KS",
+      "055550.KS",
+      "068270.KS"
+    ],
+    "invalid_source_ohlc_removed": {
+      "006400.KS_1d.csv.gz": [
+        "2024-10-14",
+        "2024-11-07"
+      ],
+      "051910.KS_1d.csv.gz": [
+        "2024-10-14",
+        "2024-11-07"
+      ],
+      "000660.KS_1d.csv.gz": [
+        "2023-02-02",
+        "2023-02-09",
+        "2024-10-14"
+      ],
+      "068270.KS_1d.csv.gz": [
+        "2023-01-25",
+        "2023-01-26",
+        "2023-02-10",
+        "2024-01-15",
+        "2024-11-07"
+      ],
+      "005380.KS_1d.csv.gz": [
+        "2023-02-01",
+        "2024-01-15"
+      ],
+      "069500.KS_1d.csv.gz": [],
+      "005930.KS_1d.csv.gz": [
+        "2024-10-14"
+      ],
+      "035420.KS_1d.csv.gz": [
+        "2023-02-02"
+      ],
+      "005490.KS_1d.csv.gz": [
+        "2024-10-14"
+      ],
+      "012330.KS_1d.csv.gz": [
+        "2024-01-15"
+      ],
+      "055550.KS_1d.csv.gz": [
+        "2023-01-30",
+        "2023-02-06"
+      ]
+    },
+    "daily_missing_vs_benchmark": {
+      "000660.KS": [
+        "2023-02-02",
+        "2023-02-09",
+        "2024-10-14",
+        "2025-09-19"
+      ],
+      "005380.KS": [
+        "2023-02-01",
+        "2024-01-15",
+        "2025-09-19"
+      ],
+      "005490.KS": [
+        "2024-10-14",
+        "2025-09-19"
+      ],
+      "005930.KS": [
+        "2024-10-14",
+        "2025-09-19"
+      ],
+      "006400.KS": [
+        "2024-10-14",
+        "2024-11-07",
+        "2025-09-19"
+      ],
+      "012330.KS": [
+        "2024-01-15",
+        "2025-09-19"
+      ],
+      "035420.KS": [
+        "2023-02-02",
+        "2025-09-19"
+      ],
+      "051910.KS": [
+        "2024-10-14",
+        "2024-11-07",
+        "2025-09-19"
+      ],
+      "055550.KS": [
+        "2023-01-30",
+        "2023-02-06",
+        "2025-09-19"
+      ],
+      "068270.KS": [
+        "2023-01-25",
+        "2023-01-26",
+        "2023-02-10",
+        "2024-01-15",
+        "2024-11-07",
+        "2025-09-19"
+      ]
+    },
+    "intraday": {
+      "5": {
+        "000660.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "005380.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "005490.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "005930.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "006400.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "012330.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "035420.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "051910.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "055550.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "068270.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        }
+      },
+      "15": {
+        "000660.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "005380.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "005490.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "005930.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "006400.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "012330.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "035420.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "051910.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "055550.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        },
+        "068270.KS": {
+          "complete_sessions": 57,
+          "rejected_dates": [
+            "2026-07-28",
+            "2026-07-29",
+            "2026-10-15"
+          ]
+        }
+      }
+    }
+  }
+}

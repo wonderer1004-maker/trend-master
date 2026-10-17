@@ -1,0 +1,29 @@
+{
+  "backtrader_runs": 180,
+  "independent_ledger_runs": 180,
+  "summary_rows": 720,
+  "max_engine_relative_error": 8.619855286499582e-15,
+  "selected": {
+    "SP500": "OLD_VOL20",
+    "NASDAQ100": "OLD_VOL20",
+    "KOSPI200": "NEW_MOM12_1"
+  },
+  "research_gate_passers": [],
+  "live_enabled": false,
+  "primary_backtrader_runs": 168,
+  "posthoc_candidates": [
+    {
+      "case": "SP500",
+      "strategy": "IMPROVED_BREAK55_CORE"
+    },
+    {
+      "case": "NASDAQ100",
+      "strategy": "OLD_HYST150"
+    },
+    {
+      "case": "KOSPI200",
+      "strategy": "V8_HYST45_PORT"
+    }
+  ],
+  "posthoc_gate_passers": []
+}

@@ -1,0 +1,35 @@
+name: GitHub Backtrader strategy lab v5
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research/github_lab_v5/**'
+      - '.github/workflows/github-lab-v5.yml'
+permissions:
+  contents: read
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: research/github_lab_v5/requirements.txt
+      - run: pip install -r research/github_lab_v5/requirements.txt
+      - run: python -m unittest discover -s research/github_lab_v5 -p 'test_*.py' -v
+      - run: python research/github_lab_v5/run_all.py
+      - run: python research/github_lab_v5/followup.py
+      - run: |
+          python research/github_lab_v5/report.py
+          python research/github_lab_v5/plot.py
+          cat reports/github_lab_v5/RESULT_KO.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: github-backtrader-v5-reproducible
+          path: |
+            reports/github_lab_v5/
+            research/github_lab_v5/input/
+          retention-days: 90

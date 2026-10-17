@@ -1,0 +1,26 @@
+{
+  "KOSPI200": {
+    "return_all_cases": [],
+    "return_and_drawdown_all_cases": []
+  },
+  "KOSDAQ150": {
+    "return_all_cases": [],
+    "return_and_drawdown_all_cases": []
+  },
+  "SP500": {
+    "return_all_cases": [],
+    "return_and_drawdown_all_cases": []
+  },
+  "NASDAQ100": {
+    "return_all_cases": [
+      "CORE_BOOST125",
+      "HYST150_HALF",
+      "MA200_200"
+    ],
+    "return_and_drawdown_all_cases": []
+  },
+  "ALL_INDICES": {
+    "return_all_cases": [],
+    "return_and_drawdown_all_cases": []
+  }
+}

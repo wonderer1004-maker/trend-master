@@ -1,0 +1,42 @@
+name: Index hold versus DCA challenge V3
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/index_challenge_v3/**
+      - .github/workflows/index-challenge-v3.yml
+permissions:
+  contents: read
+concurrency:
+  group: index-challenge-v3
+  cancel-in-progress: false
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas==2.2.3 numpy==2.3.5
+      - run: python -m unittest discover -s research/index_challenge_v3 -p 'test_*.py' -v
+      - name: Compare 3648 matched-contribution cases
+        run: python -u research/index_challenge_v3/run.py
+      - name: Test 640 two-index rotation cases
+        run: python -u research/index_challenge_v3/rotation.py
+      - name: Assess return and risk separately
+        run: python research/index_challenge_v3/assess.py
+      - name: Show report
+        run: |
+          cat reports/index_challenge_v3/DECISION_KO.md >> "$GITHUB_STEP_SUMMARY"
+          cat reports/index_challenge_v3/README_KO.md >> "$GITHUB_STEP_SUMMARY"
+          cat reports/index_challenge_v3/ROTATION_KO.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: index-challenge-v3-results-and-inputs
+          path: |
+            reports/index_challenge_v3/
+            research/index_challenge_v3/input/
+          retention-days: 90

@@ -1,0 +1,36 @@
+name: Index V3 additional actual-ETF 2008 stress
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/index_crisis_v3.py
+      - .github/workflows/index-crisis-v3.yml
+permissions:
+  contents: read
+concurrency:
+  group: index-v3-crisis
+  cancel-in-progress: false
+jobs:
+  stress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas==2.2.3 numpy==2.3.5
+      - run: python -m unittest discover -s research/index_challenge_v3 -p 'test_*.py' -v
+      - name: Run 608 unchanged-rule crisis and extended-period cases
+        run: python -u research/index_crisis_v3.py
+      - name: Show final report
+        run: |
+          cat reports/index_challenge_v3/FINAL_KO.md >> "$GITHUB_STEP_SUMMARY"
+          cat reports/index_challenge_v3/CRISIS_KO.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: index-v3-2008-stress-and-final-report
+          path: |
+            reports/index_challenge_v3/
+          retention-days: 90

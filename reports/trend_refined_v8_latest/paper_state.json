@@ -1,5 +1,5 @@
 {
-  "cash": 56528653.12394054,
+  "cash": 56528655.79345144,
   "holdings": {},
   "next_target": {},
   "data_asof": "2026-10-16",
@@ -8,12 +8,12 @@
   "strategy": "DUAL_BAND45",
   "intent_id": "38aa36c5d057f93d5b10a1091dfd1c27020de184ffa0c5ffe30d005b84318836",
   "metrics": {
-    "total_return": 4.652865312394054,
-    "cagr": 0.2907361774111301,
-    "mdd": -0.1881400422440681,
-    "end_value": 56528653.12394054,
+    "total_return": 4.6528655793451446,
+    "cagr": 0.2907361863919138,
+    "mdd": -0.188140150821813,
+    "end_value": 56528655.79345144,
     "order_fills": 379,
-    "avg_exposure": 0.28975868724533055
+    "avg_exposure": 0.2897586897581724
   },
   "action": "REBALANCE_NEXT_OPEN"
 }

@@ -1,7 +1,7 @@
 {
   "start": "2026-10-13",
   "locked_paper_model": "DUAL_BAND45",
-  "observations": 6,
+  "observations": 7,
   "status": "FORWARD_RESEARCH_IN_PROGRESS",
   "candidate": {
     "total_return": 0.0,

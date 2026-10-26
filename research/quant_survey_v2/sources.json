@@ -1,0 +1,139 @@
+[
+  {
+    "family": "시계열 모멘텀",
+    "source": "https://www.aqr.com/Insights/Research/Journal-Article/Time-Series-Momentum",
+    "evidence": "다자산 선물·선도에서 과거 12개월 수익률의 예측력 연구",
+    "test": "TSM12: 현물 ETF/국내주식 매수만 허용한 변형; 원 논문의 롱숏·변동성 가중 미복제"
+  },
+  {
+    "family": "상대 모멘텀",
+    "source": "https://www.aqr.com/insights/research/journal-article/value-and-momentum-everywhere",
+    "evidence": "여러 시장에서 가치와 모멘텀 프리미엄 및 상관관계 연구",
+    "test": "CSM12_1, MOM_VOL18; 상위3·롱온리·월간은 본 연구의 고정 적용안"
+  },
+  {
+    "family": "듀얼 모멘텀",
+    "source": "https://www.optimalmomentum.com/research-papers/",
+    "paper": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2042750",
+    "evidence": "상대 강도와 절대 모멘텀 결합",
+    "test": "DUAL12, CORE50: 기존 GEM 자산·규칙을 그대로 복제하지 않은 상위3 변형"
+  },
+  {
+    "family": "10개월 이동평균",
+    "source": "https://mebfaber.com/2017/12/13/episode-86-quantitative-approach-tactical-asset-allocation/",
+    "paper": "https://mebfaber.com/wp-content/uploads/2016/05/SSRN-id962461.pdf",
+    "evidence": "월말 가격과 10개월 평균 비교",
+    "test": "MA10M은 단일 주가지수 ETF에 적용; 미국 방어 자산 SHY, 국내 현금"
+  },
+  {
+    "family": "장기 이동평균",
+    "source": "https://mebfaber.com/2016/09/14/episode-20-listener-qa/",
+    "evidence": "월간 평균과 일간 추세 지표의 관계",
+    "test": "MA200은 일간 판단·다음 시가 체결 변형"
+  },
+  {
+    "family": "변동성 관리",
+    "source": "https://law.yale.edu/sites/default/files/area/workshop/leo/leo17_moreira.pdf",
+    "paper": "https://www.nber.org/papers/w22208",
+    "evidence": "과거 분산으로 위험 노출 조절",
+    "test": "VOL15는 변동성 목표 15%·비차입·5%p 밴드의 별도 변형; 원 논문 역분산 전략 복제 아님"
+  },
+  {
+    "family": "52주 고점",
+    "source": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.2004.00695.x",
+    "evidence": "52주 고점 근접도와 이후 수익률 연구",
+    "test": "HIGH52: 종가/조정 고가252일 최고값 상위3, 월간, 매수만"
+  },
+  {
+    "family": "저위험·저베타",
+    "source": "https://www.aqr.com/insights/research/journal-article/betting-against-beta",
+    "evidence": "차입 제약과 저베타 자산의 위험조정 성과 연구",
+    "test": "LOWVOL은 60일 저변동성 상위3의 간접 시험; BAB의 베타 추정·공매도·레버리지 미복제"
+  },
+  {
+    "family": "역변동성·위험분산",
+    "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1977577",
+    "evidence": "위험균형·최소분산 포트폴리오 비교",
+    "test": "INVVOL은 단순 역변동성 가중; 상관관계까지 고려한 정확한 위험균형 아님"
+  },
+  {
+    "family": "단기 RSI 역추세",
+    "source": "https://tradingmarkets.com/recent/the_improved_r2_strategy_84_correct_with_just_6_rules_-674361",
+    "evidence": "저자가 공개한 3일 RSI2 하락 진입·RSI2 75 초과 청산",
+    "test": "R2: 당일 종가 체결 대신 다음 시가, 지수 ETF에만 적용"
+  },
+  {
+    "family": "가격 돌파",
+    "source": "https://www.turtletrader.com/rules/",
+    "evidence": "55일 등 가격 채널 돌파 원칙",
+    "test": "BREAKOUT55는 지수ETF 매수 전용·종가 확인·20일 저가 청산 변형; 터틀 원형 재현 아님"
+  },
+  {
+    "family": "가치",
+    "source": "https://www.aqr.com/insights/research/journal-article/value-and-momentum-everywhere",
+    "evidence": "가치 프리미엄과 모멘텀 결합 연구",
+    "test": "미검증: 공시 당시 장부가치·시총 데이터 부족"
+  },
+  {
+    "family": "품질·수익성",
+    "source": "https://www.aqr.com/Insights/Research/Working-paper/Quality-minus-Junk",
+    "paper": "https://www.nber.org/papers/w15940",
+    "evidence": "수익성·안정성 등 기업 품질과 수익률 연구",
+    "test": "미검증: 시점별 재무와 공시 일시 부족; 현재 재무로 과거를 채우지 않음"
+  },
+  {
+    "family": "페어 트레이딩",
+    "source": "https://www.nber.org/papers/w7032",
+    "evidence": "상대가격 괴리 이용 연구",
+    "test": "미검증: 대차 가능 종목·비용·공매도 제약 이력 부재"
+  },
+  {
+    "family": "장중 모멘텀",
+    "source": "https://concretumgroup.com/beat-the-market-an-effective-intraday-momentum-strategy-for-sp500-etf-spy/",
+    "paper": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4824172",
+    "evidence": "SPY 장중 신호·후행손절 연구",
+    "test": "미검증: 분봉·체결 자료 없음; 일봉으로 장중 성과를 만들지 않음"
+  },
+  {
+    "family": "거래비용",
+    "source": "https://www.aqr.com/insights/research/working-paper/trading-costs-of-asset-pricing-anomalies",
+    "evidence": "실제 거래자료를 사용한 팩터별 비용과 실행가능성 연구",
+    "test": "모든 후보에 비용1·2배와 1·2거래일 지연을 동일 적용"
+  },
+  {
+    "family": "다중시험·과최적화",
+    "source": "https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf",
+    "evidence": "많은 전략 중 최고값 선택의 과적합 위험",
+    "test": "후보14개 사전고정·실패 포함 전부 공개·개발기간만으로 모델 선택; PBO 수치 자체를 계산한 것은 아님"
+  },
+  {
+    "family": "단순 분산 기준선",
+    "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1376199",
+    "evidence": "복잡한 최적화와 동일비중 분산의 비교",
+    "test": "동일비중 보유와 월간 리밸런싱을 기준선으로 포함"
+  },
+  {
+    "family": "캐리",
+    "source": "https://www.aqr.com/Insights/Research/Journal-Article/Carry",
+    "evidence": "보유 수익과 위험 프리미엄의 다자산 연구",
+    "test": "미검증: 선물 만기구조·현선물 가격·통화 금리 차 자료 부족"
+  },
+  {
+    "family": "실적발표 후 추세 PEAD",
+    "source": "https://www.nber.org/papers/w11683",
+    "evidence": "실적 정보에 대한 주의 부족과 지연 반응 연구",
+    "test": "미검증: 시점별 실적 예상치·서프라이즈·공시 일시 부재"
+  },
+  {
+    "family": "머신러닝 팩터",
+    "source": "https://www.nber.org/papers/w25398",
+    "evidence": "기업 특성과 비선형 수익 예측 비교 연구",
+    "test": "미검증: 당시 기업 특성 패널과 별도 학습·검증 데이터 부재; 가격 몇 개로 논문 수익을 재현하지 않음"
+  },
+  {
+    "family": "옵션 변동성 프리미엄",
+    "source": "https://www.nber.org/papers/w10912",
+    "evidence": "옵션 가격의 점프·변동성 위험 보상 연구",
+    "test": "미검증: 당시 옵션 체인·스프레드·증거금·롤오버 자료 없음; ETF 배당률을 옵션 초과수익으로 간주하지 않음"
+  }
+]

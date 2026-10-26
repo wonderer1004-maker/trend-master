@@ -1,0 +1,31 @@
+name: Q-MULTI V1 price-only pilot (full model blocked)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/q_multi_v1/**
+      - .github/workflows/q-multi-v1.yml
+permissions:
+  contents: read
+concurrency:
+  group: q-multi-v1-pilot
+  cancel-in-progress: false
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas==2.2.3 numpy==2.3.5
+      - run: python -m unittest discover -s research/q_multi_v1 -p 'test_*.py' -v
+      - run: python research/q_multi_v1/backtest.py
+      - name: Show limited pilot results
+        run: cat reports/q_multi_v1/README_KO.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: q-multi-v1-price-only-results
+          path: reports/q_multi_v1/

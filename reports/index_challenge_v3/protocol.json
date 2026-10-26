@@ -1,0 +1,35 @@
+{
+  "data_end": "2026-10-16",
+  "rules_sha256": "23b518378e01654a3dde5790f1c2606d6e1b214dd999f775310c756706c49a66",
+  "funding": {
+    "LUMP": "initial KRW10million / USD10000, no subsequent contributions",
+    "DCA": "zero initial, KRW1million / USD1000 at first session open of every month including first month"
+  },
+  "accounting": "opening external flows issue fund units at pre-flow open NAV; drawdown and CAGR based on fund unit price; XIRR uses dated external flows and final value",
+  "selection": "choose active rule with highest minimum development excess money-IRR across both cashflows, both costs and both execution delays; no validation/later data used",
+  "execution": "prior close target; next session open; delay2 stress; fresh deposits use latest executable target; monthly rebalance for active/static blends",
+  "costs": {
+    "us": {
+      "fee_each_side": 0.0002,
+      "slippage_each_side": 0.0005
+    },
+    "kr": {
+      "fee_each_side": 0.0005,
+      "slippage_each_side": 0.001
+    }
+  },
+  "limitations": [
+    "real 2x ETF prices embed daily reset, expenses and financing; no synthetic 2*index return",
+    "real 2x ETFs increase risk exposure, so higher returns are not evidence of alpha",
+    "no direct borrowing/shorting; fractional adjusted units, not whole-share broker execution",
+    "Yahoo adjustment approximates pre-tax distribution reinvestment; no double-added dividends",
+    "US returns USD, exclude FX and personal capital-gains/dividend taxes; account-specific Korean ETF taxes also excluded",
+    "idle KRW cash zero interest, US defensive holdings SHY, ETF exchange sell tax assumed zero",
+    "some source OHLC sessions missing; common-date intersection disclosed; does not reconstruct missing daily trades",
+    "monthly thresholds are targets, allocation can drift intramonth",
+    "four liquid index/2x pairs chosen today; indices are investable ETF proxies not exact tax-free index returns",
+    "historical period splits already partly inspected in prior research; no claim of untouched live out-of-sample",
+    "unleveraged alternatives and static leveraged benchmarks retained; all 15 candidates and all failed cases disclosed",
+    "starting-year checks overlap and are not statistically independent"
+  ]
+}

@@ -1,13 +1,6 @@
 name: Yahoo breakout screen and backtest
 on:
-  push:
-    paths:
-      - 'scripts/run_yahoo_breakout.py'
-      - '.github/workflows/yahoo-breakout.yml'
-      - 'pages/1_신고가_4전략.py'
   workflow_dispatch:
-  schedule:
-    - cron: '30 7 * * 1-5'
 jobs:
   yahoo-backtest:
     runs-on: ubuntu-latest

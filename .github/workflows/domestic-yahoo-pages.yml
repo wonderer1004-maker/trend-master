@@ -1,12 +1,6 @@
 name: Domestic ETF Yahoo alerts
 on:
-  push:
-    branches: [main]
-    paths: ['docs/**', 'domestic_alerts/**', 'trend_following/**', '.github/workflows/domestic-yahoo-pages.yml']
   workflow_dispatch:
-  schedule:
-    - cron: '20 7,8 * * 1-5'
-    - cron: '30 22 * * 1-5'
 permissions:
   contents: read
   pages: write

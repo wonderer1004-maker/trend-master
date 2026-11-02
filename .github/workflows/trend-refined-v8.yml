@@ -1,15 +1,6 @@
 name: Trend Refined V8 small risk return upgrade
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - scripts/trend_refined_v8.py
-      - scripts/export_v8_alert_feed.py
-      - tests/test_v8_alert_feed.py
-      - tests/test_trend_refined_v8.py
-      - .github/workflows/trend-refined-v8.yml
-  schedule:
-    - cron: '25 8 * * 1-5'
 permissions:
   contents: write
 concurrency:

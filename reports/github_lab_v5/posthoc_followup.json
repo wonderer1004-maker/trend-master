@@ -1,0 +1,257 @@
+[
+  {
+    "case": "SP500",
+    "strategy": "IMPROVED_BREAK55_CORE",
+    "selection": "POST_HOC_ALL_PRIMARY_EIGHT_JOINT_WINS; not development-selected",
+    "primary_joint_wins": 8,
+    "delay_checks": [
+      {
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      }
+    ],
+    "delay_all_pass": false,
+    "bootstrap": {
+      "block_months": 3,
+      "resamples": 2000,
+      "excess_cagr_ci95": [
+        -0.01235940398017984,
+        0.12090476708777544
+      ],
+      "positive_lower_bound": false,
+      "limitations": "conditional on selected model and surviving universe; not adjusted for full research selection"
+    },
+    "exploratory_gate": false,
+    "live_enabled": false
+  },
+  {
+    "case": "NASDAQ100",
+    "strategy": "OLD_HYST150",
+    "selection": "POST_HOC_ALL_PRIMARY_EIGHT_JOINT_WINS; not development-selected",
+    "primary_joint_wins": 8,
+    "delay_checks": [
+      {
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": false
+      },
+      {
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": false
+      },
+      {
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": false
+      },
+      {
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": false
+      }
+    ],
+    "delay_all_pass": false,
+    "bootstrap": {
+      "block_months": 3,
+      "resamples": 2000,
+      "excess_cagr_ci95": [
+        -0.07154376353386499,
+        0.10902587720091446
+      ],
+      "positive_lower_bound": false,
+      "limitations": "conditional on selected model and surviving universe; not adjusted for full research selection"
+    },
+    "exploratory_gate": false,
+    "live_enabled": false
+  },
+  {
+    "case": "KOSPI200",
+    "strategy": "V8_HYST45_PORT",
+    "selection": "POST_HOC_ALL_PRIMARY_EIGHT_JOINT_WINS; not development-selected",
+    "primary_joint_wins": 8,
+    "delay_checks": [
+      {
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": false,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      }
+    ],
+    "delay_all_pass": false,
+    "bootstrap": {
+      "block_months": 3,
+      "resamples": 2000,
+      "excess_cagr_ci95": [
+        -0.23460761653974507,
+        0.8451674335337144
+      ],
+      "positive_lower_bound": false,
+      "limitations": "conditional on selected model and surviving universe; not adjusted for full research selection"
+    },
+    "exploratory_gate": false,
+    "live_enabled": false
+  }
+]

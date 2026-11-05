@@ -1,0 +1,405 @@
+[
+  {
+    "symbol": "AAPL",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/AAPL_1d.csv.gz",
+    "csv_sha256": "759b6517df1c298c2f18d8c242028a395827c7e7902f18dd39f881736e10a640"
+  },
+  {
+    "symbol": "MSFT",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/MSFT_1d.csv.gz",
+    "csv_sha256": "455d2c15c9907ba8822d1ecf0a152afec603af1aa02ecefc798de33972598cc1"
+  },
+  {
+    "symbol": "AMZN",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/AMZN_1d.csv.gz",
+    "csv_sha256": "b4eb0165c69eef0e5d256f1d36c7952e49f997af8f8a96bd5f5f5d23bbc08636"
+  },
+  {
+    "symbol": "GOOGL",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/GOOGL_1d.csv.gz",
+    "csv_sha256": "f096788b47ed9a5b13fcf4708bc0259938588a561de5b3287b1c5753af2fad9e"
+  },
+  {
+    "symbol": "META",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/META_1d.csv.gz",
+    "csv_sha256": "7d3a5b3c446eecdc856fd6fd4eab7afc7ce09136f4e683293e9b5754b8300343"
+  },
+  {
+    "symbol": "NVDA",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/NVDA_1d.csv.gz",
+    "csv_sha256": "ae50e94fb1d42e93b603a92dea13da5d5f4bb081f7dc651d6334a5115ac93385"
+  },
+  {
+    "symbol": "AMD",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/AMD_1d.csv.gz",
+    "csv_sha256": "ff4806fdb11cbc15b29575b449ffdd115a0ba5683ee907d2458ff91f861d932b"
+  },
+  {
+    "symbol": "INTC",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/INTC_1d.csv.gz",
+    "csv_sha256": "3f54f90a9ba07c56b7b51ab13881ff294ce8903a6b551d8eed24a453733b6a94"
+  },
+  {
+    "symbol": "CSCO",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/CSCO_1d.csv.gz",
+    "csv_sha256": "c7ec7e4cf6eb74e96f0ddf51ca6124c321a284978bbfa3f9f2a2b78e3c15f73c"
+  },
+  {
+    "symbol": "ORCL",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/ORCL_1d.csv.gz",
+    "csv_sha256": "64056dfa78b55ab32cf35fdd4b96a360bb1d2fa3a582483e35f678a8e57b7111"
+  },
+  {
+    "symbol": "IBM",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/IBM_1d.csv.gz",
+    "csv_sha256": "6b3b3c4e6446adb3433d532857fe973a335367261f640106ade1c14f2d5f6fd2"
+  },
+  {
+    "symbol": "JPM",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/JPM_1d.csv.gz",
+    "csv_sha256": "ae87f5c3ed12d1277d4cb1ab4cf65d988450b16e388ce892ca43677d67e3712c"
+  },
+  {
+    "symbol": "BAC",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/BAC_1d.csv.gz",
+    "csv_sha256": "3af74dac9172aa63bcc9f3985760946715e59dd7f1a0f996ae0d813fb95530c4"
+  },
+  {
+    "symbol": "XOM",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/XOM_1d.csv.gz",
+    "csv_sha256": "dd562f5b8066136448b93b2f75842679250ad77fe5959ea8813199665abd8cc4"
+  },
+  {
+    "symbol": "CVX",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/CVX_1d.csv.gz",
+    "csv_sha256": "8ea0675c70193847289d99ea1287f68f8aef733528a74881dbfb027c7362bdcf"
+  },
+  {
+    "symbol": "WMT",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/WMT_1d.csv.gz",
+    "csv_sha256": "8d473469ad543220a27be723f13e70a0a58e785067054a23e9647428be2b74a1"
+  },
+  {
+    "symbol": "KO",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/KO_1d.csv.gz",
+    "csv_sha256": "4fb4f1b33164a897c98df6dcb916964833f9a7ceb21a6891cda312b5ad0f5d46"
+  },
+  {
+    "symbol": "PEP",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/PEP_1d.csv.gz",
+    "csv_sha256": "b75f8f55f9d03885de90bf83b9c7ae91157c7ee220ed1d2f36026c91b9369874"
+  },
+  {
+    "symbol": "JNJ",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/JNJ_1d.csv.gz",
+    "csv_sha256": "cec4c52ad91597a246f1a57017c74ddb89a5d2b7700d623cea274266b1e0c496"
+  },
+  {
+    "symbol": "PFE",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/PFE_1d.csv.gz",
+    "csv_sha256": "694894647fba8b16ec98b1af197b57ea17d2f9d9c8292cea4a0510b57c5673f1"
+  },
+  {
+    "symbol": "SPY",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/SPY_1d.csv.gz",
+    "csv_sha256": "3b81fc94b59154e0e76d03f1edb9b71fa986752b933e172dfbf76dbcdb14a411"
+  },
+  {
+    "symbol": "QQQ",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/us/QQQ_1d.csv.gz",
+    "csv_sha256": "5de8e141dd33b668283e4b7b038eef3081cfcd5d11c081c3f7a32a0a294165a0"
+  },
+  {
+    "symbol": "SSO",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/index_challenge_v3/input/us/SSO.csv.gz",
+    "csv_sha256": "ddbdb2f3b750df9bb3aed86b7b358b3300812b3747f306e9aaf20302da6af18d"
+  },
+  {
+    "symbol": "QLD",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/index_challenge_v3/input/us/QLD.csv.gz",
+    "csv_sha256": "fdb96936544a513f4e99477a6c62c35be2c936fc53996f8946d18e5340acf03d"
+  },
+  {
+    "symbol": "SHY",
+    "market": "us",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/index_challenge_v3/input/us/SHY.csv.gz",
+    "csv_sha256": "d9164f74c6f38ccb476cc9dfb059af4fa624a860debc47e7bdcb3bebdd5c50ac"
+  },
+  {
+    "symbol": "005930.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/005930.KS_1d.csv.gz",
+    "csv_sha256": "b3219b770c390fe35fd098003d0cd9d8c48616f660ed9331704635db1de876e0"
+  },
+  {
+    "symbol": "000660.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/000660.KS_1d.csv.gz",
+    "csv_sha256": "ae4600773fe33bc23c18cd527f605a8bf27f64c7e65e10e72ffe2bf9d1c50586"
+  },
+  {
+    "symbol": "005380.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/005380.KS_1d.csv.gz",
+    "csv_sha256": "8ec803e2bf83cdf2cfe974607ab8a2e969aebc7c100f353cc2f36b97e4b9ec86"
+  },
+  {
+    "symbol": "035420.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/035420.KS_1d.csv.gz",
+    "csv_sha256": "e918a47108404210b583fa6bf1790c8ef08eba81faaadd79f97e6f314e816930"
+  },
+  {
+    "symbol": "005490.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/005490.KS_1d.csv.gz",
+    "csv_sha256": "5d6ca141dd716e6de2bc3d16ae55f8ad3ded42a52047ad904cc45099754c3f3b"
+  },
+  {
+    "symbol": "051910.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/051910.KS_1d.csv.gz",
+    "csv_sha256": "5ef72f65aac9baa6d61c2cdc11b206e149ca42cee9b4e23f5d1991fa6953d835"
+  },
+  {
+    "symbol": "068270.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/068270.KS_1d.csv.gz",
+    "csv_sha256": "c6897177d81b6500e3cfd77a1914772927ce9d73667732a98c03a3761be366a3"
+  },
+  {
+    "symbol": "006400.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/006400.KS_1d.csv.gz",
+    "csv_sha256": "e34c081d381e095820c3208608d863544c048404af71df3703077a7c4a859038"
+  },
+  {
+    "symbol": "012330.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/012330.KS_1d.csv.gz",
+    "csv_sha256": "c70f8c74b445ddf6c94f2649c1483a3cf5c0f1078f4fc0a6f0d39fc8854d4fbf"
+  },
+  {
+    "symbol": "055550.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/055550.KS_1d.csv.gz",
+    "csv_sha256": "f66499221d51752af04a73be9c2152f280aa6b5d232726cd160c619797d55f84"
+  },
+  {
+    "symbol": "069500.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/stock_lab_v4/input/kr/069500.KS_1d.csv.gz",
+    "csv_sha256": "df0f90d4bd334cfc88ad91740d33595b97a9b90a3c2faded019bf39ed9d1b079"
+  },
+  {
+    "symbol": "122630.KS",
+    "market": "kr",
+    "provider": "Yahoo previously frozen",
+    "source_file": "research/index_challenge_v3/input/kr/122630.KS.csv.gz",
+    "csv_sha256": "08713cf9d6b28d259ff5475d34a23843fc06d3423c3215bb666cf377edae3aef"
+  },
+  {
+    "symbol": "005930.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=005930&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "bf9ec29e9557cdd1c30dd8d9543a33411ac8d52554161b5d2c7e15a3b94955dd",
+    "csv_sha256": "4e3a8085e6c3d91a0aff832a9bb3a16ed07af0813ae200b021405da508e7efb6",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "000660.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=000660&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "b66e548007662a597f95f76c14ff39c817342c1761307559049524fbb9015153",
+    "csv_sha256": "c208093a3b96c2a9ebf9a1252ed7672802d2ca9cc9ce36d5162a628039826e0b",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "005380.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=005380&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "cd4119a8aa337d1e1cfa0f2e16fe4a7d8b5fae2fca6e9c10d7ad8e3a31f4a83d",
+    "csv_sha256": "7d69f83a11c8c0eca0e81fa1cbb1180a246e86f1cb3c3e21532281e80a4d9889",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "035420.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=035420&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "cfc631d8c6ab4553d54893d08de6ba8e466b91f354c23a2475426147f37b5aba",
+    "csv_sha256": "fc5f2263d278458e015d3db6fa16553fc709a98d53bd4ad68172aa5ca196ed38",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "005490.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=005490&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "1864007307f5cf3b2228fbaddc2e0fd05c4bf87645db2f0c3db881f7997da143",
+    "csv_sha256": "f843d413af5772d471a7aa2cf19b81746e8e4d95dcb0f34d667c62634c75e60b",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "051910.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=051910&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "4f22767352b099b9cdfede020156f7871dffe3e0ee3409812f886ef750f7dc5c",
+    "csv_sha256": "d3821f50d1a567e0d31524c4e3f2ba186334cedfebc76e1900bfd8c68e39de19",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "068270.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=068270&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "8e997c4dc013614a5ab7b03bdeacbcca062477c969a813a48c097fc3fb6fba4f",
+    "csv_sha256": "1f78f50f4c1477d4f3d5e44fd1017dead2cf0c08c0dacf23de69d89a3dd76382",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "006400.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=006400&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "cf119b7e65bb0a09aa16bdd0edc4c0fdce78223be87b5b2fb0e9f1ba8c11a29d",
+    "csv_sha256": "4056c4c8e44a9aaa373ce2fb1d56363a978de624902f8e841dde89d55916b46c",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "012330.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=012330&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "332840bca3187df8f918c5a66e694073253107ef95cf1a8a5c7a17a2cf46e081",
+    "csv_sha256": "9e71f14dcd7616a3782bd53ca2cb45f27a694645973559ae7946e8b94beb3070",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "055550.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=055550&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "4fde5be5a1c2a384c393c29776d596680132bf819449914e11e5c4fa11d52888",
+    "csv_sha256": "bdbf7e437018c46df58408aa47d9f60e4cffa85ad705d23cbac7375f0ad8fb3c",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "069500.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=069500&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "4f4bfaf36d716f37161a5c50e4c94e92a203a2aaedb6a7c6d1eadaa36e514965",
+    "csv_sha256": "cca28b765d51b2f8465bea3c21198292d6c5c44efd53bae513536cba322a4e35",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  },
+  {
+    "symbol": "122630.KS",
+    "provider": "Naver fchart",
+    "market": "kr",
+    "url": "https://fchart.stock.naver.com/sise.nhn?symbol=122630&timeframe=day&count=3000&requestType=0",
+    "raw_sha256": "a3651229abe880a907aeb24dc2ab6355de9c7d39fbeadd84614eb0be1d7daf68",
+    "csv_sha256": "9fdb7e51b8a4634a036a6aa196580c5f11994074878481685377d2a24809485d",
+    "rows": 2398,
+    "first": "2017-01-02",
+    "last": "2026-10-16",
+    "return_basis": "provider historical prices; no cash distributions; not guaranteed total return"
+  }
+]

@@ -1,0 +1,491 @@
+[
+  {
+    "case": "SP500",
+    "selected": "OLD_VOL20",
+    "research_gate": false,
+    "live_enabled": false,
+    "checks": [
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": false
+      }
+    ],
+    "bootstrap": {
+      "block_months": 3,
+      "resamples": 2000,
+      "excess_cagr_ci95": [
+        -0.07912722273599974,
+        0.06905717391945088
+      ],
+      "positive_lower_bound": false,
+      "limitations": "conditional on selected model and surviving universe; not adjusted for full research selection"
+    },
+    "reason": "reused history and fixed surviving-stock universe; independent forward observation still required"
+  },
+  {
+    "case": "NASDAQ100",
+    "selected": "OLD_VOL20",
+    "research_gate": false,
+    "live_enabled": false,
+    "checks": [
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      }
+    ],
+    "bootstrap": {
+      "block_months": 3,
+      "resamples": 2000,
+      "excess_cagr_ci95": [
+        -0.08759908290370434,
+        0.04127917879663506
+      ],
+      "positive_lower_bound": false,
+      "limitations": "conditional on selected model and surviving universe; not adjusted for full research selection"
+    },
+    "reason": "reused history and fixed surviving-stock universe; independent forward observation still required"
+  },
+  {
+    "case": "KOSPI200",
+    "selected": "NEW_MOM12_1",
+    "research_gate": false,
+    "live_enabled": false,
+    "checks": [
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "primary",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "validation_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": true,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 1,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "lump",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      },
+      {
+        "stage": "delay_stress",
+        "window": "test_reused",
+        "cost": 2,
+        "funding": "monthly",
+        "positive": true,
+        "higher_return": false,
+        "lower_drawdown": true
+      }
+    ],
+    "bootstrap": {
+      "block_months": 3,
+      "resamples": 2000,
+      "excess_cagr_ci95": [
+        -0.45894715223634386,
+        0.1330141225933948
+      ],
+      "positive_lower_bound": false,
+      "limitations": "conditional on selected model and surviving universe; not adjusted for full research selection"
+    },
+    "reason": "reused history and fixed surviving-stock universe; independent forward observation still required"
+  }
+]
